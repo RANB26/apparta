@@ -6,12 +6,12 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                    <h3>Houslys<span>.</span></h3>
+                    <h3>Apparta<span>.</span></h3>
                     <p>
                         Universidad de la Costa <br>
                         Barranquilla, Colombia<br><br>
                         <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> houslysproyecto@gmail.com<br>
+                        <strong>Email:</strong> apparta@gmail.com<br>
                     </p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -27,18 +27,18 @@
                     <h4>Secciones</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#hero">Inicio</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#about">Sobre Nosotros</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#portfolio">Recomendados</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#team">Equipo</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#about">Sobre la aplicación</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Beneficios</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#team">Desarrolladores</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Nuestros Servivios</h4>
                     <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Publica tu vivienda</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Casas en arriendo</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Casas en venta</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Gestión centralizada de reservas</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Disponibilidad de mesas</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url()?>#services">Historial de reservas</a></li>
                     </ul>
                 </div>
 
@@ -48,7 +48,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>Houslys</span></strong>. Todos los derechos reservados
+                &copy; Copyright <strong><span>Apparta</span></strong>. Todos los derechos reservados
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->

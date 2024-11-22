@@ -7,7 +7,7 @@ class Home extends BaseController
     public function index()
     {
 
-        $datos =["titulo"=>"Houslys", "estilo"=>"style"];
+        $datos =["titulo"=>"Apparta", "estilo"=>"style"];
 
         echo view('general/header', $datos);
         echo view('index');

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class HouslysModel extends Model
+class AppartaModel extends Model
 {
     public function listarRegistros($tabla)
     {

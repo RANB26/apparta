@@ -58,6 +58,8 @@ $routes->post('/actualizarvivienda', 'ViviendasController::actualizarVivienda', 
 $routes->get('/eliminarvivienda/(:num)', 'ViviendasController::eliminarVivienda/$1', ['as' => 'eliminar_vivienda']);
 $routes->get('/vivienda/(:num)', 'ViviendasController::vivienda/$1', ['as' => 'vivienda']);
 
+$routes->get('/d', 'LoginController::des');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

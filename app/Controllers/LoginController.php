@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\HouslysModel;
+use App\Models\AppartaModel;
 
 class LoginController extends BaseController
 {
@@ -23,30 +23,36 @@ class LoginController extends BaseController
 
     }
 
-
-
-    public function crearUsuario()
+    public function des()
     {
-        $datos_crear = [
-                        "tipo_usuario" => "Usuario",
-                        "nombre_usuario" => $_POST['nombre_usuario'],
-                        "apellido_usuario" => $_POST['apellido_usuario'],
-                        "fnacimiento_usuario" => $_POST['fnacimiento_usuario'],
-                        "celular_usuario" => $_POST['celular_usuario'],
-                        "correo_usuario" => $_POST['correo_usuario'],
-                        "password_usuario" => $_POST['password_usuario']
-                    ];
-
-        $Houslys = new HouslysModel();
-        $respuesta = $Houslys->insertarRegistro($datos_crear, 'usuario');
-
-        if($respuesta>0){
-            return redirect()->to(base_url().route_to('login'))->with('mensaje','registrado');
-        }else{
-            return redirect()->to(base_url().route_to('login'))->with('mensaje','error');
-        }
-
+        $session = session();
+        $session->destroy();
     }
+
+
+
+    // public function crearUsuario()
+    // {
+    //     $datos_crear = [
+    //                     "tipo_usuario" => "Usuario",
+    //                     "nombre_usuario" => $_POST['nombre_usuario'],
+    //                     "apellido_usuario" => $_POST['apellido_usuario'],
+    //                     "fnacimiento_usuario" => $_POST['fnacimiento_usuario'],
+    //                     "celular_usuario" => $_POST['celular_usuario'],
+    //                     "correo_usuario" => $_POST['correo_usuario'],
+    //                     "password_usuario" => $_POST['password_usuario']
+    //                 ];
+
+    //     $Houslys = new HouslysModel();
+    //     $respuesta = $Houslys->insertarRegistro($datos_crear, 'usuario');
+
+    //     if($respuesta>0){
+    //         return redirect()->to(base_url().route_to('login'))->with('mensaje','registrado');
+    //     }else{
+    //         return redirect()->to(base_url().route_to('login'))->with('mensaje','error');
+    //     }
+
+    // }
 
     public function ingresar()
     {
@@ -59,17 +65,16 @@ class LoginController extends BaseController
         }
         else{
             
-            $Houslys = new HouslysModel();
-            $datosUsuario = $Houslys->obtenerRegistro(['correo_usuario' => $usuario], 'usuario');
+            $Apparta = new AppartaModel();
+            $datosUsuario = $Apparta->obtenerRegistro(['correo_usuario' => $usuario], 'usuario');
 
             if(count($datosUsuario)>0 && ($password==$datosUsuario[0]['password_usuario'])){
 
                 $datos = [
                         "id_usuario" => $datosUsuario[0]['id_usuario'],
-                        "tipo_usuario" => $datosUsuario[0]['tipo_usuario'],
+                        "id_tipo_usuario" => $datosUsuario[0]['id_tipo_usuario'],
                         "nombre_usuario" => $datosUsuario[0]['nombre_usuario'],
                         "apellido_usuario" => $datosUsuario[0]['apellido_usuario'],
-                        "fnacimiento_usuario" => $datosUsuario[0]['fnacimiento_usuario'],
                         "celular_usuario" => $datosUsuario[0]['celular_usuario'],
                         "correo_usuario" => $datosUsuario[0]['correo_usuario'],
                         "password_usuario" => $datosUsuario[0]['password_usuario']
@@ -91,7 +96,6 @@ class LoginController extends BaseController
         $session = session();
         $session->destroy();
         return redirect()->to(base_url().route_to('login'));
-
     }
 
 }

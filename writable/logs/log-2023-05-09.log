@@ -1,0 +1,159 @@
+INFO - 2023-05-09 19:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-09 19:04:25 --> Undefined array key "documento_usuario"
+in APPPATH\Controllers\LoginController.php on line 71.
+ 1 APPPATH\Controllers\LoginController.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "documento_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\LoginController.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-09 19:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-09 19:06:34 --> Undefined array key "documento_usuario"
+in APPPATH\Controllers\LoginController.php on line 31.
+ 1 APPPATH\Controllers\LoginController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "documento_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\LoginController.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crearUsuario()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-09 19:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-09 19:09:37 --> Undefined property: stdClass::$documento_usuario
+in APPPATH\Views\pages\admin\gesusuarios.php on line 30.
+ 1 APPPATH\Views\pages\admin\gesusuarios.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$documento_usuario', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuarios.php', 30)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuarios.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/gesusuarios', [], true)
+ 5 APPPATH\Controllers\UserController.php(28): view('pages/admin/gesusuarios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UserController->gesUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-09 19:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-09 19:10:10 --> Undefined array key "documento_usuario"
+in APPPATH\Views\pages\admin\gesusuario.php on line 20.
+ 1 APPPATH\Views\pages\admin\gesusuario.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "documento_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuario.php', 20)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuario.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/gesusuario', [], true)
+ 5 APPPATH\Controllers\UserController.php(52): view('pages/admin/gesusuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UserController->gesUsuario('3')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-09 19:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 14:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:30:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 19:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 16:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-09 16:05:40 --> mysqli_sql_exception: Duplicate entry 'Cra  #-' for key 'direccion_vivienda' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `vi...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `vi...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `vi...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `vi...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(29): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\PageController.php(121): App\Models\HouslysModel->insertarRegistro(Array, 'vivienda')
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\PageController->crearVivienda()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+INFO - 2023-05-09 16:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-09 16:05:46 --> mysqli_sql_exception: Duplicate entry 'Cra  #-' for key 'direccion_vivienda' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `vi...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `vi...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `vi...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `vi...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(29): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\PageController.php(121): App\Models\HouslysModel->insertarRegistro(Array, 'vivienda')
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\PageController->crearVivienda()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+INFO - 2023-05-09 16:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-09 16:05:51 --> mysqli_sql_exception: Duplicate entry 'Cra  #-' for key 'direccion_vivienda' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `vi...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `vi...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `vi...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `vi...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(29): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\PageController.php(121): App\Models\HouslysModel->insertarRegistro(Array, 'vivienda')
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\PageController->crearVivienda()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+INFO - 2023-05-09 16:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 16:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-09 21:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

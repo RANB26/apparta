@@ -1,0 +1,1079 @@
+CRITICAL - 2023-04-01 08:19:11 --> syntax error, unexpected token "endforeach", expecting end of file
+in APPPATH\Views\pages\admin\gesusuarios.php on line 38.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/gesusuarios', [], true)
+ 3 APPPATH\Controllers\PageController.php(62): view('pages/admin/gesusuarios', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->gesusuarios()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 08:21:51 --> Undefined property: App\Controllers\PageController::$db
+in APPPATH\Controllers\PageController.php on line 54.
+ 1 APPPATH\Controllers\PageController.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\PageController::$db', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->gesusuarios()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 09:12:12 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 882.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\LoginController.php(35): CodeIgniter\Model->__call('insertarUsuarios', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 09:14:10 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 882.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\LoginController.php(36): CodeIgniter\Model->__call('insertarUsuarios', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 09:31:08 --> mysqli_sql_exception: Duplicate entry '1042850201' for key 'documento_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 09:31:08 --> Duplicate entry '1042850201' for key 'documento_usuario'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850201\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'34324234\', \'fdsfdfgfg@gmail.com\', \'123\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850201\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'34324234\', \'fdsfdfgfg@gmail.com\', \'123\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850201\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'34324234\', \'fdsfdfgfg@gmail.com\', \'123\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (:documento_usuario:, :tipo_usuario:, :nombre_usuario:, :apellido_usuario:, :fnacimiento_usuario:, :celular_usuario:, :correo_usuario:, :password_usuario:)', [...], false)
+ 5 APPPATH\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 09:55:28 --> Undefined array key "correo_usuario"
+in APPPATH\Controllers\LoginController.php on line 49.
+ 1 APPPATH\Controllers\LoginController.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "correo_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\LoginController.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 09:55:40 --> Undefined array key "correo_usuario"
+in APPPATH\Controllers\LoginController.php on line 49.
+ 1 APPPATH\Controllers\LoginController.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "correo_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\LoginController.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 09:56:28 --> Undefined array key "correo_usuario"
+in APPPATH\Controllers\LoginController.php on line 49.
+ 1 APPPATH\Controllers\LoginController.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "correo_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\LoginController.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 09:56:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com AND password_usuario =123' at line 1 in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(29): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(49): App\Models\HouslysModel->IniciarSesion('rayvernb@gmail....', '123')
+#5 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-04-01 09:56:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com AND password_usuario =123' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM usuario WHERE correo_usuario =rayvernb@gmail.com AND password_usuario =123', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM usuario WHERE correo_usuario =rayvernb@gmail.com AND password_usuario =123')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM usuario WHERE correo_usuario =rayvernb@gmail.com AND password_usuario =123')
+ 4 APPPATH\Models\HouslysModel.php(29): CodeIgniter\Database\BaseConnection->query('SELECT * FROM usuario WHERE correo_usuario =rayvernb@gmail.com AND password_usuario =123')
+ 5 APPPATH\Controllers\LoginController.php(49): App\Models\HouslysModel->IniciarSesion('rayvernb@gmail.com', '123')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 09:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 09:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 09:57:59 --> Undefined variable $datosusuario
+in APPPATH\Views\pages\perfil.php on line 23.
+ 1 APPPATH\Views\pages\perfil.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datosusuario', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:00:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:00:22 --> Attempt to read property "nombre_usuario" on null
+in APPPATH\Views\pages\perfil.php on line 23.
+ 1 APPPATH\Views\pages\perfil.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:03:32 --> Attempt to read property "nombre_usuario" on null
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:07:00 --> Trying to access array offset on value of type null
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:07:22 --> Attempt to read property "nombre_usuario" on null
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:07:57 --> Attempt to read property "nombre_usuario" on null
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:08:10 --> Trying to access array offset on value of type null
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:15:54 --> Attempt to read property "nombre_usuario" on array
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on array', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:16:18 --> Attempt to read property "nombre_usuario" on array
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombre_usuario" on array', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:19:17 --> Undefined constant "nombre_usuario"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 4 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:19:31 --> Undefined array key "nombre_usuario"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:19:42 --> Undefined array key "nombre_usuario"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:19:50 --> Undefined array key "nombre_usuario"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 APPPATH\Views\pages\perfil.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_usuario"', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:25:53 --> syntax error, unexpected token "endforeach"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 3 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:26:35 --> syntax error, unexpected token "endforeach", expecting "," or ";"
+in APPPATH\Views\pages\perfil.php on line 59.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 3 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:28:24 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 23.
+ 1 APPPATH\Views\pages\perfil.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:28:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:28:37 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 23.
+ 1 APPPATH\Views\pages\perfil.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:30:19 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 10:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:30:35 --> Undefined variable $infousuario
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $infousuario', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(30): view('pages/perfil')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->publicar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 10:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 10:30:42 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:25:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:25:29 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 14:34:08 --> mysqli_sql_exception: Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 14:34:08 --> Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850202\', \'Usuario\', \'Rayver\', \'erwerwer\', \'2023-04-20\', \'34324234\', \'rayvernb@gmail.com\', \'123\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850202\', \'Usuario\', \'Rayver\', \'erwerwer\', \'2023-04-20\', \'34324234\', \'rayvernb@gmail.com\', \'123\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'1042850202\', \'Usuario\', \'Rayver\', \'erwerwer\', \'2023-04-20\', \'34324234\', \'rayvernb@gmail.com\', \'123\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (:documento_usuario:, :tipo_usuario:, :nombre_usuario:, :apellido_usuario:, :fnacimiento_usuario:, :celular_usuario:, :correo_usuario:, :password_usuario:)', [...], false)
+ 5 APPPATH\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 14:35:28 --> mysqli_sql_exception: Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 14:35:28 --> Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'214334324\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-19\', \'23423432\', \'rayvernb@gmail.com\', \'123\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'214334324\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-19\', \'23423432\', \'rayvernb@gmail.com\', \'123\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'214334324\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-19\', \'23423432\', \'rayvernb@gmail.com\', \'123\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (:documento_usuario:, :tipo_usuario:, :nombre_usuario:, :apellido_usuario:, :fnacimiento_usuario:, :celular_usuario:, :correo_usuario:, :password_usuario:)', [...], false)
+ 5 APPPATH\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:36:17 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 14:38:39 --> mysqli_sql_exception: Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+INFO - 2023-04-01 14:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:39:02 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 14:41:41 --> mysqli_sql_exception: Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 14:41:41 --> Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'12342\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'3231\', \'rayvernb@gmail.com\', \'123\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'12342\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'3231\', \'rayvernb@gmail.com\', \'123\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (\'12342\', \'Usuario\', \'Rayver\', \'Nuñez\', \'2023-04-12\', \'3231\', \'rayvernb@gmail.com\', \'123\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`documento_usuario`, `tipo_usuario`, `nombre_usuario`, `apellido_usuario`, `fnacimiento_usuario`, `celular_usuario`, `correo_usuario`, `password_usuario`) VALUES (:documento_usuario:, :tipo_usuario:, :nombre_usuario:, :apellido_usuario:, :fnacimiento_usuario:, :celular_usuario:, :correo_usuario:, :password_usuario:)', [...], false)
+ 5 APPPATH\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 14:41:59 --> mysqli_sql_exception: Duplicate entry 'rayvernb@gmail.com' for key 'correo_usuario' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(36): App\Models\HouslysModel->insertarUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->crear()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+INFO - 2023-04-01 14:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:52:41 --> syntax error, unexpected variable "$usuario", expecting "function" or "const"
+in APPPATH\Controllers\PageController.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:53:17 --> syntax error, unexpected token "global", expecting "function" or "const"
+in APPPATH\Controllers\PageController.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:54:41 --> syntax error, unexpected token "=", expecting "," or ";"
+in APPPATH\Controllers\PageController.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:54:55 --> syntax error, unexpected token "=", expecting "," or ";"
+in APPPATH\Controllers\PageController.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 14:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 14:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 14:58:32 --> syntax error, unexpected token "=", expecting "," or ";"
+in APPPATH\Controllers\PageController.php on line 14.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 15:01:30 --> syntax error, unexpected token "=", expecting "," or ";"
+in APPPATH\Controllers\PageController.php on line 14.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 15:01:49 --> syntax error, unexpected token "public"
+in APPPATH\Controllers\PageController.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:02:33 --> syntax error, unexpected token "public"
+in APPPATH\Controllers\PageController.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 15:02:51 --> syntax error, unexpected token "private"
+in APPPATH\Controllers\PageController.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:05:05 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:06:14 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(21): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:12:22 --> Undefined variable $infousuario
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $infousuario', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(30): view('pages/perfil')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->publicar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:12:25 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 15:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 15:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 15:12:47 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(20): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 16:08:33 --> mysqli_sql_exception: Unknown column 'usuario' in 'where clause' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(53): App\Models\HouslysModel->IniciarSesion(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 16:08:33 --> Call to a member function getResultArray() on bool
+in APPPATH\Models\HouslysModel.php on line 31.
+ 1 APPPATH\Controllers\LoginController.php(53): App\Models\HouslysModel->IniciarSesion([...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 16:13:50 --> mysqli_sql_exception: Unknown column 'usuario' in 'where clause' in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(53): App\Models\HouslysModel->IniciarSesion(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-01 16:13:50 --> Call to a member function getResultArray() on bool
+in APPPATH\Models\HouslysModel.php on line 31.
+ 1 APPPATH\Controllers\LoginController.php(53): App\Models\HouslysModel->IniciarSesion([...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:26:44 --> Call to undefined function App\Controllers\password_verif()
+in APPPATH\Controllers\LoginController.php on line 55.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:38:50 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(19): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:47:08 --> session(): Argument #1 ($val) must be of type ?string, array given, called in C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php on line 68
+in SYSTEMPATH\Common.php on line 986.
+ 1 APPPATH\Controllers\LoginController.php(68): session([...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:47:25 --> session(): Argument #1 ($val) must be of type ?string, array given, called in C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php on line 68
+in SYSTEMPATH\Common.php on line 986.
+ 1 APPPATH\Controllers\LoginController.php(68): session([...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:48:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:48:33 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\pages\perfil.php on line 11.
+ 1 APPPATH\Views\pages\perfil.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 5 APPPATH\Controllers\PageController.php(19): view('pages/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 16:50:36 --> syntax error, unexpected end of file
+in APPPATH\Views\pages\perfil.php on line 158.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/perfil', [], true)
+ 3 APPPATH\Controllers\PageController.php(19): view('pages/perfil', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 16:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 16:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 17:04:18 --> Undefined variable $mensajess
+in APPPATH\Controllers\PageController.php on line 19.
+ 1 APPPATH\Controllers\PageController.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $mensajess', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 17:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 17:04:22 --> Undefined variable $mensajess
+in APPPATH\Controllers\PageController.php on line 19.
+ 1 APPPATH\Controllers\PageController.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $mensajess', 'C:\\xampp\\htdocs\\Houslys\\app\\Controllers\\PageController.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->perfil()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 17:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 17:08:50 --> Call to undefined method CodeIgniter\Session\Session::destry()
+in APPPATH\Controllers\LoginController.php on line 82.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->salir()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 17:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-01 17:54:44 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'houslys', 3306, '', 0)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(53): App\Models\HouslysModel->ObtenerUsuario(Array)
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\Houslys\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Houslys\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Houslys\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Houslys\app\Models\HouslysModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Houslys\app\Controllers\LoginController.php(53): App\Models\HouslysModel->ObtenerUsuario(Array)
+#5 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+#6 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#7 C:\xampp\htdocs\Houslys\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Houslys\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-04-01 17:54:44 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `correo_usuario` = :correo_usuario:', [...], false)
+ 3 APPPATH\Models\HouslysModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\LoginController.php(53): App\Models\HouslysModel->ObtenerUsuario([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\LoginController->ingresar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-01 17:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 17:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:47:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-01 20:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-01 21:01:31 --> Undefined array key 0
+in SYSTEMPATH\Router\RouteCollection.php on line 1240.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Houslys\\system\\Router\\RouteCollection.php', 1240)
+ 2 SYSTEMPATH\Router\RouteCollection.php(1057): CodeIgniter\Router\RouteCollection->buildReverseRoute('usuario/([0-9]+)', [])
+ 3 SYSTEMPATH\Common.php(970): CodeIgniter\Router\RouteCollection->reverseRoute('usuario')
+ 4 APPPATH\Views\pages\admin\gesusuarios.php(33): route_to('usuario')
+ 5 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuarios.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/gesusuarios', [], true)
+ 8 APPPATH\Controllers\PageController.php(59): view('pages/admin/gesusuarios', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->gesusuarios()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-01 21:01:42 --> Undefined array key 0
+in SYSTEMPATH\Router\RouteCollection.php on line 1240.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Houslys\\system\\Router\\RouteCollection.php', 1240)
+ 2 SYSTEMPATH\Router\RouteCollection.php(1057): CodeIgniter\Router\RouteCollection->buildReverseRoute('usuario/([0-9]+)', [])
+ 3 SYSTEMPATH\Common.php(970): CodeIgniter\Router\RouteCollection->reverseRoute('usuario')
+ 4 APPPATH\Views\pages\admin\gesusuarios.php(33): route_to('usuario')
+ 5 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\Houslys\\app\\Views\\pages\\admin\\gesusuarios.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/gesusuarios', [], true)
+ 8 APPPATH\Controllers\PageController.php(59): view('pages/admin/gesusuarios', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PageController->gesusuarios()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

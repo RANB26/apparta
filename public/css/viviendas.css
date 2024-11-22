@@ -1,0 +1,77 @@
+.viviendas{
+    padding: 100px 50px 100px 50px;
+    width: 100%;
+}
+
+.listaviviendas-scroll{
+	height: 80vh;
+	overflow-y: scroll;
+    padding: 10px 12px;
+}
+
+#mapa{
+    width: 100%; 
+    height: 100%;
+    border-radius: 15px;
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    #mapa{
+        display:none;
+    }
+
+    .viviendas-scroll{
+        width: auto;
+    }
+
+    .listaviviendas-scroll{
+        overflow:auto;
+    }
+}
+
+.portfolio a .card{
+    transition: 0.40s;
+}
+
+.portfolio a .card:hover{
+    border-color: #fff;
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: 0.40s;
+}
+
+.opciones{
+    position:absolute;
+    width: auto;
+    height: 30px;
+    right: 15px;
+    top: 20px;
+    z-index: 1;
+}
+
+:root {
+    --color-inactivo: #5f5050;
+    --color-hover: #ffa400;
+}
+.valoracion {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.valoracion button {
+    background-color: initial;
+    border: 0;
+    transition: 1s all;
+    color: var(--color-inactivo);
+}
+
+.valoracion button:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    color: var(--color-hover);
+}
+
+.activado{
+    transition: 1s;
+    color: var(--color-hover);
+}

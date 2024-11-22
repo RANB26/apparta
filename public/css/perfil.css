@@ -1,0 +1,116 @@
+
+.fondo-perfil {
+  width: 100%;
+  background: url("../img/hero-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fondo-perfil:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.section-title {
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888888;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #ffde9e;
+  margin: 4px 10px;
+}
+
+.info{
+  padding: 25px 5px;
+}
+
+.actualizar{
+  border-radius: 4px;
+  background-color: #ffc451;
+  border: none;
+  transition: 0.4s;
+}
+
+.actualizar:hover{
+  background-color: #f8b735;
+}
+
+.cuadros{
+  background-color: rgba(255, 255, 255, 0.813);
+  box-shadow: 0px 0px 25px #222;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio a .card{
+  transition: 0.40s;
+}
+
+.portfolio a .card:hover{
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.opciones{
+  position:absolute;
+  width: auto;
+  height: 30px;
+  right: 15px;
+  top: 8px;
+  z-index: 1;
+}
+
+:root {
+  --color-inactivo: #5f5050;
+  --color-hover: #ffa400;
+}
+.valoracion {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.valoracion button {
+  background-color: initial;
+  border: 0;
+  transition: 1s all;
+}
+
+.valoracion button:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+.valoracion button a {
+  transition: 1s;
+  color: var(--color-inactivo);
+}
+
+.valoracion button a:hover {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+
+.activado{
+  color: var(--color-hover);
+}

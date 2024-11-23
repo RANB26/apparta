@@ -13,8 +13,8 @@
     else if(mensaje=='usuario eliminado'){
         Swal.fire('¡Usuario eliminado!','','success');
     }
-    else if(mensaje=='vivienda eliminada'){
-        Swal.fire('¡Vivienda eliminada!','','success');
+    else if(mensaje=='mesa eliminada'){
+        Swal.fire('¡Mesa eliminada!','','success');
     }
     else if(mensaje=='inicia sesion'){
         Swal.fire('¡Debe iniciar sesión primero!','','error');

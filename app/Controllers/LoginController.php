@@ -23,14 +23,6 @@ class LoginController extends BaseController
 
     }
 
-    public function des()
-    {
-        $session = session();
-        $session->destroy();
-    }
-
-
-
     // public function crearUsuario()
     // {
     //     $datos_crear = [

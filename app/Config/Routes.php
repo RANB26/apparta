@@ -47,13 +47,11 @@ $routes->get('/gesusuarios/usuario/(:num)', 'UserController::gesUsuario/$1', ['a
 $routes->post('/actualizarusuario/(:num)', 'UserController::actualizarUsuario/$1', ['as' => 'actualizar_usuario']);
 $routes->get('/eliminarusuario/(:num)', 'UserController::eliminarUsuario/$1', ['as' => 'eliminar_usuario']);
 
-$routes->get('/gesviviendas', 'ViviendasController::gesViviendas', ['as' => 'gesviviendas']);
-$routes->get('/gesviviendas/vivienda/(:num)', 'ViviendasController::gesVivienda/$1', ['as' => 'gesvivienda']);
-$routes->post('/actualizarvivienda', 'ViviendasController::actualizarVivienda', ['as' => 'actualizar_vivienda']);
-$routes->get('/eliminarvivienda/(:num)', 'ViviendasController::eliminarVivienda/$1', ['as' => 'eliminar_vivienda']);
-$routes->get('/vivienda/(:num)', 'ViviendasController::vivienda/$1', ['as' => 'vivienda']);
+$routes->get('/gesmesas', 'MesasController::gesMesas', ['as' => 'gesmesas']);
+$routes->get('/gesmesas/mesa/(:num)', 'MesasController::gesMesa/$1', ['as' => 'gesmesa']);
+$routes->post('/actualizarmesa', 'MesasController::actualizarMesa', ['as' => 'actualizar_mesa']);
+$routes->get('/eliminarmesa/(:num)', 'MesasController::eliminarMesa/$1', ['as' => 'eliminar_mesa']);
 
-$routes->get('/d', 'LoginController::des');
 $routes->post('/crearusuario', 'LoginController::crearUsuario', ['as' => 'crear_usuario']);
 
 /*

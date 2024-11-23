@@ -1,7 +1,7 @@
 <header id="header" class="fixed-top menu-app">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-    <a href="<?php echo base_url(); ?>" class="logo align-items-center me-auto me-lg-0"><img src="<?php echo base_url();?>/img/Logo.png" alt="" class="img-fluid"><span>Houslys</span></a>
+    <a href="<?php echo base_url(); ?>" class="logo align-items-center me-auto me-lg-0"><img src="<?php echo base_url();?>/img/Logo.png" alt="" class="img-fluid"><span>Apparta</span></a>
 
     <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>

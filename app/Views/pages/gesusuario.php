@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group col-sm-4 flex-column d-flex"> 
                             <label class="form-control-label px-3">Tipo Usuario<span class="text-danger"> *</span></label> 
-                            <select class="form-select" name="tipo_usuario" <?php if(session('tipo_usuario')!='SuperAdmin') echo "disabled" ?>>
+                            <select class="form-select" name="id_tipo_usuario" <?php if(session('tipo_usuario')!='SuperAdmin') echo "disabled" ?>>
                                 <option value="1" <?php if($info_usuario['tipo_usuario'] == 'SuperAdmin') echo 'selected' ?> >SuperAdmin</option>
                                 <option value="2" <?php if($info_usuario['tipo_usuario'] == 'Admin') echo 'selected' ?>>Admin</option>
                                 <option value="3" <?php if($info_usuario['tipo_usuario'] == 'Cliente') echo 'selected' ?> >Cliente</option>
@@ -48,11 +48,11 @@
                         <div class="form-group col-sm-6 flex-column d-flex"> 
                             <label class="form-control-label px-3">Contraseña<span class="text-danger"> *</span></label>
                             <?php
-                                if($info_usuario['tipo_usuario'] == 'Cliente' or session('tipo_usuario') != 'SuperAdmin'){
+                                if(session('tipo_usuario') != 'SuperAdmin'){
                                     $disabled = "disabled";
                                 } else $disabled = "";
                             ?>
-                            <input class="form-control" type="password" name="password_usuario" value="<?php echo $info_usuario['password_usuario']?>" <?php  echo $disabled ?> required> 
+                            <input class="form-control" type="password" name="password_usuario" value="<?php echo $info_usuario['password_usuario']?>" <?php  echo $disabled ?>> 
                         </div>
                     </div>
                     <div class="row justify-content-center mt-4">

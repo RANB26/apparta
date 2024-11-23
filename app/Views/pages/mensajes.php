@@ -5,7 +5,7 @@
     var mensaje = '<?php echo $mensaje ?>';
 
     if(mensaje=='registro actualizado'){
-        Swal.fire('¡Información actualizada!','Se ha actualizado con exito','success');
+        Swal.fire('¡Información actualizada!','Se ha actualizado con éxito','success');
     }
     else if(mensaje=='reservada'){
         Swal.fire('¡Se ha reservado la mesa!','','success');

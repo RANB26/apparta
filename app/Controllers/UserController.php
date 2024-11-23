@@ -68,11 +68,11 @@ class UserController extends BaseController
         ];
 
         if($pagina==1){
-            array_push($datos_actualizar, ["password_usuario" => $_POST['password_usuario']]);
+            $datos_actualizar["password_usuario"] = $_POST['password_usuario'];
         }else if(session('tipo_usuario')=="SuperAdmin"){
-            array_push($datos_actualizar, ["identificacion_usuario" => $_POST['identificacion_usuario']]);
-            array_push($datos_actualizar, ["id_tipo_usuario" => $_POST['tipo_usuario']]);
-            array_push($datos_actualizar, ["password_usuario" => $_POST['password_usuario']]);
+            $datos_actualizar["identificacion_usuario"] = $_POST['identificacion_usuario'];
+            $datos_actualizar["id_tipo_usuario"] = $_POST['id_tipo_usuario'];
+            $datos_actualizar["password_usuario"] = $_POST['password_usuario'];
         }
         
         $id_usuario = $_POST['id_usuario'];

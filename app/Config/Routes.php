@@ -31,21 +31,15 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->get('/login', 'LoginController::index', ['as' => 'login']);
-$routes->post('/crearusuario', 'LoginController::crearUsuario', ['as' => 'crear_usuario']);
+$routes->get('/login', 'LoginController::index', ['as' => 'login']); 
 $routes->post('/ingresar', 'LoginController::ingresar', ['as' => 'ingresar']);
 $routes->get('/salir', 'LoginController::salir', ['as' => 'salir']);
 
+$routes->get('/mesasyreservas', 'PageController::mesasReservas', ['as' => 'mesas_reservas']);
+$routes->get('/reservar', 'PageController::reservar', ['as' => 'reservar']);
+$routes->post('/crearreserva', 'PageController::crearReserva', ['as' => 'crear_reserva']);
 $routes->get('/miperfil', 'PageController::perfil', ['as' => 'perfil']);
 $routes->get('/actualizarmiperfil/(:num)', 'PageController::actualizarPerfil/$1', ['as' => 'actualizar_perfil']);
-$routes->get('/actualizarmivivienda/(:num)', 'PageController::actualizarMiVivienda/$1', ['as' => 'actualizar_mi_vivienda']);
-$routes->post('/actualizarviviendausuario', 'PageController::actualizarViviendaUsuario', ['as' => 'actualizar_vivienda_usuario']);
-$routes->get('/eliminarmivivienda/(:num)', 'PageController::eliminarMiVivienda/$1', ['as' => 'eliminar_mi_vivienda']);
-$routes->get('/publicar', 'PageController::publicar', ['as' => 'publicar']);
-$routes->post('/crearvivienda', 'PageController::crearVivienda', ['as' => 'crear_vivienda']);
-$routes->get('/viviendas', 'PageController::viviendas', ['as' => 'viviendas']);
-$routes->post('/favorito', 'PageController::favorito', ['as' => 'favorito']);
-$routes->get('/xml', 'PageController::Xml', ['as' => 'xml']);
 
 $routes->get('/gesusuarios', 'UserController::gesUsuarios', ['as' => 'gesusuarios']);
 $routes->get('/gesusuarios/usuario/(:num)', 'UserController::gesUsuario/$1', ['as' => 'gesusuario']);
@@ -59,11 +53,12 @@ $routes->get('/eliminarvivienda/(:num)', 'ViviendasController::eliminarVivienda/
 $routes->get('/vivienda/(:num)', 'ViviendasController::vivienda/$1', ['as' => 'vivienda']);
 
 $routes->get('/d', 'LoginController::des');
+$routes->post('/crearusuario', 'LoginController::crearUsuario', ['as' => 'crear_usuario']);
 
 /*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
+* --------------------------------------------------------------------
+* Additional Routing
+* --------------------------------------------------------------------
  *
  * There will often be times that you need additional routing and you
  * need it to be able to override any defaults in this file. Environment

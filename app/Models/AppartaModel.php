@@ -20,7 +20,6 @@ class AppartaModel extends Model
 
     public function obtenerRegistrosCondicion($tabla, $condicion){
         $registros = $this->db->query("SELECT * FROM ".$tabla." WHERE ".$condicion);
-        exit(json_encode($this->db->error()));
         return $registros->getResult();
     }
 
@@ -59,11 +58,17 @@ class AppartaModel extends Model
         return $reservas->getResult();
     }
 
-    public function listarMesas(){
-        $registros = $this->db->query("
-        SELECT m.id_mesa, m.id_tipo_mesa, tm.tipo_mesa, estado_mesa 
+    public function listarMesas($estado = null){
+        
+        $query = "SELECT m.id_mesa, m.id_tipo_mesa, tm.tipo_mesa, estado_mesa 
         FROM mesa m 
-        INNER JOIN tipo_mesa tm ON m.id_tipo_mesa = tm.id_tipo_mesa");
+        INNER JOIN tipo_mesa tm ON m.id_tipo_mesa = tm.id_tipo_mesa";
+
+        if($estado != null) $query .= " AND m.estado_mesa = '$estado'";
+
+        $query .= " ORDER BY m.id_tipo_mesa";
+
+        $registros = $this->db->query($query);
         return $registros->getResult();
     }
 

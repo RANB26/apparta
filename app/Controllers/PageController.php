@@ -18,7 +18,7 @@ class PageController extends BaseController{
 
             $reservas_hoy = $Apparta->obtenerReservasHoy();
             $data_mesas_reservas = ["mesas" => $mesas, "reservas_hoy" => $reservas_hoy];
-            $datos =["titulo"=>"Mesas", "estilo"=>"mesasyreservas"];
+            $datos =["titulo"=>"Mesas y reservas", "estilo"=>"mesasyreservas"];
 
             echo view("general/header", $datos);
             echo view("pages/menu");
@@ -30,6 +30,7 @@ class PageController extends BaseController{
     public function asignarMesasOcupadas(){
         $Apparta = new AppartaModel();
         $mesas = $Apparta->listarRegistros('mesa');
+        date_default_timezone_set('America/Bogota');
         $fechaActual = date('Y-m-d H:i:s');
         $reservas_activas = $Apparta->obtenerReservasActivas($fechaActual);
         foreach($mesas as $mesa){
@@ -52,59 +53,78 @@ class PageController extends BaseController{
 
         if($id_usuario==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
+        }else{
             $mensaje = session('mensaje');
-            $tipo_usuario = session('tipo_usuario');
-            
-            $datos =["titulo"=>"Publicar una vivienda", "estilo"=>"actualizar"];
-            $usuario =["id_usuario"=>$id_usuario, "mensaje" => $mensaje];
+            $Apparta = new AppartaModel();
+
+            $clientes = $Apparta->obtenerRegistrosCondicion('usuario', 'id_tipo_usuario = 3');
+            $this->asignarMesasOcupadas();
+            $mesas_disponibles = $Apparta->listarMesas('Disponible');
+
+            date_default_timezone_set('America/Bogota');
+            $fecha_actual = date("Y-m-d");
+            $hora_actual = date("H:i:00");
+
+            $datos = ["titulo"=>"Reservar", "estilo"=>"actualizar"];
+            $usuario = ["id_usuario"=>$id_usuario, "clientes"=>$clientes, "mesas_disponibles"=> $mesas_disponibles, "fecha_actual"=>$fecha_actual, "hora_actual"=>$hora_actual, "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
-            if($tipo_usuario=='Admin' or $tipo_usuario=='SuperAdmin'){
-                echo view("pages/admin/menu");
-            }else{
-                echo view("pages/menu");
-            }
-            echo view("pages/publicar", $usuario);
+            echo view("pages/menu");
+            echo view("pages/reservar", $usuario);
             echo view("pages/mensajes");
             echo view("general/footer");
         }
     }
 
-    public function crearVivienda()
+    public function crearReserva()
     {
+        $id_usuario = session('id_usuario');
 
-        date_default_timezone_set('America/Bogota');
-        $fecha_actual = getdate()['year']."-".getdate()['mon']."-".getdate()['mday']." ".getdate()['hours'].":".getdate()['minutes'].":00";
-
-        $datos_crear = [
-            "id_usuario" => $_POST['id_usuario'],
-            "fpublicacion_vivienda" => $fecha_actual,
-            "tipo_vivienda" => $_POST['tipo_vivienda'],
-            "precio_vivienda" => $_POST['precio_vivienda'],
-            "estado_vivienda" => "Desocupada",
-            "direccion_vivienda" => "Cra ".$_POST['numcarrera_vivienda'].$_POST['letracarrera_vivienda']." #".$_POST['numcalle_vivienda']."-".$_POST['num_vivienda'],
-            "numcarrera_vivienda" => $_POST['numcarrera_vivienda'],
-            "letracarrera_vivienda" => $_POST['letracarrera_vivienda'],
-            "numcalle_vivienda" => $_POST['numcalle_vivienda'],
-            "num_vivienda" => $_POST['num_vivienda'],
-            "latitud_vivienda" => $_POST['latitud_vivienda'],
-            "longitud_vivienda" => $_POST['longitud_vivienda'],
-            "area_vivienda" => $_POST['area_vivienda'],
-            "estrato_vivienda" => $_POST['estrato_vivienda'],
-            "numbaño_vivienda" => $_POST['numbaño_vivienda'],
-            "numhabitaciones_vivienda" => $_POST['numhabitaciones_vivienda'],
-            "descripcion_vivienda" => $_POST['descripcion_vivienda']
-        ];
-
-        $Houslys = new HouslysModel();
-        $respuesta = $Houslys->insertarRegistro($datos_crear, 'vivienda');
-
-        if($respuesta>0){
-            return redirect()->to(base_url().route_to('publicar'))->with('mensaje','vivienda publicada');
+        if($id_usuario==""){
+            return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
         }else{
-            return redirect()->to(base_url().route_to('publicar'))->with('mensaje','error');
+
+            $Apparta = new AppartaModel();
+
+            $hora_inicio = $_POST['hora_inicio'];
+            $hora_fin = $_POST['hora_fin'];
+
+            $tipos_mesa = $Apparta->listarRegistros('tipo_mesa');
+            
+            if($hora_inicio>=$hora_fin){
+                return redirect()->to(base_url().route_to('reservar'))->with('mensaje','hora');
+            }else{
+
+                $num_personas_valido = true;
+                foreach($tipos_mesa as $tipo_mesa){
+                    if($tipo_mesa->id_tipo_mesa == $_POST['id_mesa']){
+                        if($tipo_mesa->capacidad_mesa < $_POST['num_personas']){
+                            $num_personas_valido = false;
+                        }
+                    }
+                }
+
+                if(!$num_personas_valido){
+                    return redirect()->to(base_url().route_to('reservar'))->with('mensaje','capacidad');
+                }else{
+                    $datos_crear = [
+                        "id_usuario" => $_POST['id_usuario'],
+                        "id_mesa" => $_POST['id_mesa'],
+                        "fecha_inicio" => $_POST['dia_reserva']." ".$_POST['hora_inicio'],
+                        "fecha_fin" => $_POST['dia_reserva']." ".$_POST['hora_fin'],
+                        "num_personas" => $_POST['num_personas'],
+                        "id_usuario_registra" => $_POST['id_usuario_registra']                    
+                    ];
+            
+                    $respuesta = $Apparta->insertarRegistro($datos_crear, 'reserva');
+            
+                    if($respuesta>0){
+                        return redirect()->to(base_url().route_to('reservar'))->with('mensaje','reservada');
+                    }else{
+                        return redirect()->to(base_url().route_to('reservar'))->with('mensaje','error');
+                    }
+                }
+            }
         }
     }
 

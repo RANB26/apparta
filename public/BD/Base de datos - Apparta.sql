@@ -9,6 +9,7 @@ tipo_usuario varchar(20) not null
 
 create table usuario(
 id_usuario int primary key auto_increment,
+identificacion_usuario int(15) not null unique,
 id_tipo_usuario int not null,
 nombre_usuario varchar(20) not null,
 apellido_usuario varchar(25) not null,
@@ -51,11 +52,11 @@ INSERT INTO tipo_usuario (tipo_usuario) VALUES ('Admin');
 INSERT INTO tipo_usuario (tipo_usuario) VALUES ('Cliente');
 
 
-INSERT INTO usuario (id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario) 
-VALUES (1, 'SuperAdmin', '1', '0000000000', 'superadmin@gmail.com', '123');
+INSERT INTO usuario (identificacion_usuario, id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario) 
+VALUES (12345, 1, 'SuperAdmin', '1', '0000000000', 'superadmin@gmail.com', '123');
 
-INSERT INTO usuario (id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario)
-VALUES (2, 'Admin', '1', '0000000000', 'admin@gmail.com', '123');
+INSERT INTO usuario (identificacion_usuario, id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario)
+VALUES (23456, 2, 'Admin', '1', '0000000000', 'admin@gmail.com', '123');
 
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Pequeña', 2);
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Mediana', 4);

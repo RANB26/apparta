@@ -13,21 +13,22 @@ class PageController extends BaseController
 
         if($id_usuario==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
+        }else{
             $tipo_usuario = session('tipo_usuario');
             $nombre_usuario = session('nombre_usuario');
-            // $mensaje = session('mensaje');
+            $mensaje = session('mensaje');
 
             $Apparta = new AppartaModel();
             // $reservas_actuales = $Apparta->obtenerRegistrosCondicion('reserva', "id_usuario='".$id_usuario."' AND estado_reserva='confirmada'");
             // $historial_reservas = $Apparta->obtenerRegistrosCondicion('reverva', "id_usuario='".$id_usuario."' AND estado_reserva<>'confirmada'");
 
             $datos =["titulo"=>"Mi perfil", "estilo"=>"perfil"];
+            $datos_perfil = ["mensaje" => $mensaje];
 
             echo view("general/header", $datos);
             echo view("pages/menu");
-            echo view("pages/perfil");
+            echo view("pages/perfil", $datos_perfil);
+            echo view("pages/mensajes");
             echo view("general/footer");
         }
     }
@@ -38,23 +39,26 @@ class PageController extends BaseController
 
         if($id==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
-            $mensaje = session('mensaje');
-
-            $Apparta = new AppartaModel();
-            $usuario = $Apparta->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
-            $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $usuario['id_tipo_usuario']], 'tipo_usuario');
-            $usuario['tipo_usuario'] = $tipoUsuario['tipo_usuario'];
-
-            $datos =["titulo"=>"Actualizar mi perfil", "estilo"=>"actualizar"];
-            $info_usuario = ["info_usuario"=>$usuario, "mensaje" => $mensaje];
-
-            echo view("general/header", $datos);
-            echo view("pages/menu");
-            echo view("pages/actualizarmiperfil", $info_usuario);
-            echo view("pages/mensajes");
-            echo view("general/footer");
+        }else{
+            if($id_usuario!=session('id_usuario')){
+                return redirect()->to(base_url().route_to('perfil'))->with('mensaje','permisos');
+            }else{
+                $mensaje = session('mensaje');
+    
+                $Apparta = new AppartaModel();
+                $usuario = $Apparta->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
+                $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $usuario['id_tipo_usuario']], 'tipo_usuario');
+                $usuario['tipo_usuario'] = $tipoUsuario['tipo_usuario'];
+    
+                $datos =["titulo"=>"Actualizar mi perfil", "estilo"=>"actualizar"];
+                $info_usuario = ["info_usuario"=>$usuario, "mensaje" => $mensaje];
+    
+                echo view("general/header", $datos);
+                echo view("pages/menu");
+                echo view("pages/actualizarmiperfil", $info_usuario);
+                echo view("pages/mensajes");
+                echo view("general/footer");
+            }
         }
     }
 

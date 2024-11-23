@@ -59,7 +59,6 @@ class UserController extends BaseController
     {
 
         $id_usuario = $_POST['id_usuario'];
-
         $datos_actualizar = [
             "nombre_usuario" => $_POST['nombre_usuario'],
             "apellido_usuario" => $_POST['apellido_usuario'],
@@ -79,13 +78,10 @@ class UserController extends BaseController
         }else{
             if($pagina=="1"){
                 return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','error');
-            }
-            else{
+            }else{
                 return redirect()->to(base_url().'gesusuarios/usuario/'.$id_usuario)->with('mensaje','error');
-            }
-            
+            } 
         }
-
     }
 
     public function eliminarUsuario($id_usuario)

@@ -24,6 +24,10 @@
     }
     else if(mensaje=='permisos'){
         Swal.fire('¡Error!','No tiene permisos para ingresar a esta ruta','error');
+    }else if(mensaje=='error_usuario'){
+        Swal.fire('¡Error!','Ocurrió un error al eliminar el usuario','error');
+    }else if(mensaje=='error_reservas'){
+        Swal.fire('¡Error!','Ocurrió un error al eliminar las reservas del usuario','error');
     }
 
 </script>

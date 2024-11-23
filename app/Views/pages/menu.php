@@ -6,7 +6,7 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
             <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('mesas_reservas') ?>">Mesas y reservas</a></li>
-            <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('reservar') ?>">Reservar</a></li>
+            <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('reservar', 0) ?>">Reservar</a></li>
             <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('gesusuarios') ?>">Gestionar usuarios</a></li>
             <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('gesmesas') ?>">Gestionar mesas</a></li>
             <li><a class="nav-link scrollto" href="<?php echo base_url().route_to('gesreservas') ?>">Gestionar reservas</a></li>

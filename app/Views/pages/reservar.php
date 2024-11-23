@@ -12,9 +12,13 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-4 flex-column d-flex"> 
                             <label class="form-control-label px-3">Cliente<span class="text-danger"> *</span></label> 
-                            <select class="form-select" name="id_usuario"> 
+                            <select class="form-select" name="id_usuario">
                                 <?php foreach($clientes as $cliente){
-                                    echo "<option value='".$cliente->id_usuario."'>".$cliente->nombre_usuario." ".$cliente->apellido_usuario."</option>";
+                                    $selected = '';
+                                    if($cliente_reservar != null){
+                                        if($cliente_reservar['id_usuario'] == $cliente->id_usuario) $selected = 'selected';
+                                    }
+                                    echo "<option value='".$cliente->id_usuario."' $selected >".$cliente->nombre_usuario." ".$cliente->apellido_usuario."</option>";
                                 } ?>
                             </select>
                         </div>
@@ -64,6 +68,11 @@
     }
     else if(mensaje=='capacidad'){
         Swal.fire('¡Error!','Este tipo de mesa no permite esta capacidad de personas','error');
+    }else if(mensaje=='usuario'){
+        Swal.fire('¡Error!','No se encontró a este cliente','error');
+    }
+    else if(mensaje=='cliente'){
+        Swal.fire('¡Error!','Este usuario no es un cliente, por lo tanto no se puede reservar','error');
     }
 
 </script>

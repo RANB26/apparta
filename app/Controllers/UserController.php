@@ -10,6 +10,7 @@ class UserController extends BaseController
     public function gesUsuarios()
     {
         $id_usuario = session('id_usuario');
+        $tipo_usuario = session('tipo_usuario');
 
         if($id_usuario==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
@@ -17,15 +18,15 @@ class UserController extends BaseController
         else{
             $mensaje = session('mensaje');
 
-            $Houslys = new HouslysModel();
-            $usuarios = $Houslys->listarRegistros('usuario');
+            $Apparta = new AppartaModel();
+            $usuarios = $Apparta->listarUsuarios($tipo_usuario);
 
             $datos =["titulo"=>"Gestionar usuarios", "estilo"=>"gestionar"];
             $lista_usuarios = ["usuarios" => $usuarios, "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
-            echo view("pages/admin/menu");
-            echo view("pages/admin/gesusuarios", $lista_usuarios);
+            echo view("pages/menu");
+            echo view("pages/gesusuarios", $lista_usuarios);
             echo view("pages/mensajes");
             echo view("general/footer");
         }
@@ -41,15 +42,17 @@ class UserController extends BaseController
         else{
             $mensaje = session('mensaje');
 
-            $Houslys = new HouslysModel();
-            $usuario = $Houslys->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
+            $Apparta = new AppartaModel();
+            $usuario = $Apparta->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
+            $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $usuario['id_tipo_usuario']], 'tipo_usuario');
+            $usuario['tipo_usuario'] = $tipoUsuario['tipo_usuario'];
 
-            $datos =["titulo"=>"Gestionar usuarios", "estilo"=>"actualizar"];
+            $datos =["titulo"=>"Gestionar usuario", "estilo"=>"actualizar"];
             $info_usuario = ["info_usuario"=>$usuario, "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
-            echo view("pages/admin/menu");
-            echo view("pages/admin/gesusuario", $info_usuario);
+            echo view("pages/menu");
+            echo view("pages/gesusuario", $info_usuario);
             echo view("pages/mensajes");
             echo view("general/footer");
         }
@@ -57,46 +60,74 @@ class UserController extends BaseController
 
     public function actualizarUsuario($pagina)
     {
-
-        $id_usuario = $_POST['id_usuario'];
         $datos_actualizar = [
             "nombre_usuario" => $_POST['nombre_usuario'],
             "apellido_usuario" => $_POST['apellido_usuario'],
             "celular_usuario" => $_POST['celular_usuario'],
             "correo_usuario" => $_POST['correo_usuario'],
-            "password_usuario" => $_POST['password_usuario']
         ];
 
-        $AppartaModel = new AppartaModel();
-        $respuesta = $AppartaModel->actualizarRegistro($datos_actualizar, $id_usuario, 'usuario', 'id_usuario');
+        if($pagina==1){
+            array_push($datos_actualizar, ["password_usuario" => $_POST['password_usuario']]);
+        }else if(session('tipo_usuario')=="SuperAdmin"){
+            array_push($datos_actualizar, ["identificacion_usuario" => $_POST['identificacion_usuario']]);
+            array_push($datos_actualizar, ["id_tipo_usuario" => $_POST['tipo_usuario']]);
+            array_push($datos_actualizar, ["password_usuario" => $_POST['password_usuario']]);
+        }
+        
+        $id_usuario = $_POST['id_usuario'];
+        $Apparta = new AppartaModel();
+        $respuesta = $Apparta->actualizarRegistro($datos_actualizar, $id_usuario, 'usuario', 'id_usuario');
+
         if($respuesta){
-            if($pagina=="1"){
-                return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','registro actualizado');
-            }else{
+            if($pagina==1) return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','registro actualizado');
+            else
                 return redirect()->to(base_url().'gesusuarios/usuario/'.$id_usuario)->with('mensaje','registro actualizado');
-            }
         }else{
-            if($pagina=="1"){
-                return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','error');
-            }else{
+            if($pagina==1) return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','error');
+            else
                 return redirect()->to(base_url().'gesusuarios/usuario/'.$id_usuario)->with('mensaje','error');
-            } 
         }
     }
 
-    public function eliminarUsuario($id_usuario)
-    {
+    public function eliminarUsuario($id_usuario){
 
-        $Houslys = new HouslysModel();
+        $Apparta = new AppartaModel();
         $datos =["id_usuario" => $id_usuario];
 
-        $eliminarViviendas = $Houslys->eliminarRegistro($datos, 'vivienda'); 
-        $eliminarUsuario = $Houslys->eliminarRegistro($datos, 'usuario');
-
-        if($eliminarUsuario and $eliminarViviendas){
-            return redirect()->to(base_url().route_to('gesusuarios'))->with('mensaje','usuario eliminado');
+        $eliminarReservas = $Apparta->eliminarRegistro($datos, 'reserva');
+        if($eliminarReservas){
+            $eliminarUsuario = $Apparta->eliminarRegistro($datos, 'usuario');
+            if($eliminarUsuario){
+                return redirect()->to(base_url().route_to('gesusuarios'))->with('mensaje','usuario eliminado');
+            }else{
+                return redirect()->to(base_url().route_to('gesusuarios'))->with('mensaje','error_usuario');
+            }
         }else{
-            return redirect()->to(base_url().route_to('gesusuarios'))->with('mensaje','error');
+            return redirect()->to(base_url().route_to('gesusuarios'))->with('mensaje','error_reservas');
+        }
+    }
+
+    public function perfilCliente($id_cliente){
+        $id_usuario = session('id_usuario');
+
+        if($id_usuario==""){
+            return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
+        }
+        else{
+            $Apparta = new AppartaModel();
+            $usuario = $Apparta->ObtenerRegistro(['id_usuario' => $id_cliente], 'usuario');
+            $reservas_cliente = $Apparta->obtenerReservasCliente($id_cliente);
+            $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $usuario['id_tipo_usuario']], 'tipo_usuario');
+            $usuario['tipo_usuario'] = $tipoUsuario['tipo_usuario'];
+
+            $datos = ["titulo"=>"Perfil cliente", "estilo"=>"perfil"];
+            $info_cliente = ["cliente"=> $usuario, "reservas_cliente" => $reservas_cliente];
+
+            echo view("general/header", $datos);
+            echo view("pages/menu");
+            echo view("pages/perfil_cliente", $info_cliente);
+            echo view("general/footer");
         }
     }
 

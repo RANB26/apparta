@@ -80,6 +80,12 @@ table.table td a:hover {
 table.table td a.settings {
     color: #2196F3;
 }
+table.table td a.add {
+    color: #b86826;
+}
+table.table td a.info {
+    color: #48b826;
+}
 table.table td a.delete {
     color: #F44336;
 }

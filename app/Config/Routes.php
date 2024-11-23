@@ -36,12 +36,13 @@ $routes->post('/ingresar', 'LoginController::ingresar', ['as' => 'ingresar']);
 $routes->get('/salir', 'LoginController::salir', ['as' => 'salir']);
 
 $routes->get('/mesasyreservas', 'PageController::mesasReservas', ['as' => 'mesas_reservas']);
-$routes->get('/reservar', 'PageController::reservar', ['as' => 'reservar']);
+$routes->get('/reservar/(:num)', 'PageController::reservar/$1', ['as' => 'reservar']);
 $routes->post('/crearreserva', 'PageController::crearReserva', ['as' => 'crear_reserva']);
 $routes->get('/miperfil', 'PageController::perfil', ['as' => 'perfil']);
 $routes->get('/actualizarmiperfil/(:num)', 'PageController::actualizarPerfil/$1', ['as' => 'actualizar_perfil']);
 
 $routes->get('/gesusuarios', 'UserController::gesUsuarios', ['as' => 'gesusuarios']);
+$routes->get('/gesusuarios/perfilcliente/(:num)', 'UserController::perfilCliente/$1', ['as' => 'perfil_cliente']);
 $routes->get('/gesusuarios/usuario/(:num)', 'UserController::gesUsuario/$1', ['as' => 'gesusuario']);
 $routes->post('/actualizarusuario/(:num)', 'UserController::actualizarUsuario/$1', ['as' => 'actualizar_usuario']);
 $routes->get('/eliminarusuario/(:num)', 'UserController::eliminarUsuario/$1', ['as' => 'eliminar_usuario']);

@@ -47,7 +47,7 @@ class PageController extends BaseController{
         }
     }
 
-    public function reservar(){
+    public function reservar($id_cliente = null){
         
         $id_usuario = session('id_usuario');
 
@@ -56,6 +56,16 @@ class PageController extends BaseController{
         }else{
             $mensaje = session('mensaje');
             $Apparta = new AppartaModel();
+
+            $cliente_reservar = null;
+            if($id_cliente != 0){
+                $cliente_reservar = $Apparta->obtenerRegistro(['id_usuario' => $id_cliente], 'usuario');
+                if($cliente_reservar == null){
+                    return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','usuario');
+                }else if($cliente_reservar['id_tipo_usuario'] != 3){
+                    return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','cliente');
+                }
+            }
 
             $clientes = $Apparta->obtenerRegistrosCondicion('usuario', 'id_tipo_usuario = 3');
             $this->asignarMesasOcupadas();
@@ -72,11 +82,19 @@ class PageController extends BaseController{
             $hora_actual = date('H:i:00', $hora_redondeada);
 
             $datos = ["titulo"=>"Reservar", "estilo"=>"actualizar"];
-            $usuario = ["id_usuario"=>$id_usuario, "clientes"=>$clientes, "mesas_disponibles"=> $mesas_disponibles, "fecha_actual"=>$fecha_actual, "hora_actual"=>$hora_actual, "mensaje" => $mensaje];
+            $info_reservar = [
+                "id_usuario"=>$id_usuario, 
+                "clientes"=>$clientes, 
+                "mesas_disponibles"=> $mesas_disponibles, 
+                "fecha_actual"=>$fecha_actual, 
+                "hora_actual"=>$hora_actual, 
+                "cliente_reservar"=>$cliente_reservar, 
+                "mensaje" => $mensaje
+            ];
 
             echo view("general/header", $datos);
             echo view("pages/menu");
-            echo view("pages/reservar", $usuario);
+            echo view("pages/reservar", $info_reservar);
             echo view("pages/mensajes");
             echo view("general/footer");
         }
@@ -144,10 +162,6 @@ class PageController extends BaseController{
             $tipo_usuario = session('tipo_usuario');
             $nombre_usuario = session('nombre_usuario');
             $mensaje = session('mensaje');
-
-            $Apparta = new AppartaModel();
-            // $reservas_actuales = $Apparta->obtenerRegistrosCondicion('reserva', "id_usuario='".$id_usuario."' AND estado_reserva='confirmada'");
-            // $historial_reservas = $Apparta->obtenerRegistrosCondicion('reverva', "id_usuario='".$id_usuario."' AND estado_reserva<>'confirmada'");
 
             $datos =["titulo"=>"Mi perfil", "estilo"=>"perfil"];
             $datos_perfil = ["mensaje" => $mensaje];

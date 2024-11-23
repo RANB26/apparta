@@ -77,40 +77,42 @@
   position:absolute;
   width: auto;
   height: 30px;
-  right: 15px;
-  top: 8px;
+  right: 18px;
+  top: 10px;
   z-index: 1;
 }
 
 :root {
-  --color-inactivo: #5f5050;
-  --color-hover: #ffa400;
+  --color-activa: #13e000;
+  --color-confirmada: #d1e000;
+  --color-finalizada: #0086e0;
+  --color-cancelada: #ff2020;
 }
-.valoracion {
+
+.estado {
   display: flex;
   flex-direction: row-reverse;
 }
-.valoracion button {
+
+.estado button {
   background-color: initial;
   border: 0;
   transition: 1s all;
+  color: var(--color-desocupado);
 }
 
-.valoracion button:hover {
-  cursor: pointer;
-  transform: rotate(360deg);
+.confirmada{
+  color: var(--color-confirmada);
 }
 
-.valoracion button a {
-  transition: 1s;
-  color: var(--color-inactivo);
+.activa{
+  color: var(--color-activa);
 }
 
-.valoracion button a:hover {
-  color: var(--color-hover);
-  transform: rotate(360deg);
+.finalizada{
+  color: var(--color-finalizada);
 }
 
-.activado{
-  color: var(--color-hover);
+.cancelada{
+  color: var(--color-cancelada);
 }

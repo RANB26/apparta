@@ -1,0 +1,61 @@
+.mesas{
+    padding: 100px 50px 100px 50px;
+    width: 100%;
+}
+
+.listamesas-scroll{
+	height: 80vh;
+	overflow-y: scroll;
+    padding: 10px 12px;
+}
+
+.portfolio a .card{
+    transition: 0.40s;
+}
+
+.portfolio a .card:hover{
+    border-color: #fff;
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: 0.40s;
+}
+
+.opciones{
+    position:absolute;
+    width: auto;
+    height: 30px;
+    right: 15px;
+    top: 20px;
+    z-index: 1;
+}
+
+:root {
+    --color-desocupado: #13e000;
+    --color-ocupado: #ff2020;
+}
+
+.estado {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.estado button {
+    background-color: initial;
+    border: 0;
+    transition: 1s all;
+    color: var(--color-desocupado);
+}
+
+.ocupado{
+    transition: 1s;
+    color: var(--color-ocupado);
+}
+
+.num-mesa{
+    background-color: #686868;
+    color: #fff;
+    font-size: 3em;
+    padding: 10px 0;
+    border-radius: 5px 5px 0 0;
+    font-family: "Raleway", sans-serif;
+}

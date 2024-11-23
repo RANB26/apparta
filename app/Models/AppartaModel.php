@@ -6,29 +6,22 @@ use CodeIgniter\Model;
 
 class AppartaModel extends Model
 {
-    public function listarRegistros($tabla)
-    {
-
+    public function listarRegistros($tabla){
         $registros = $this->db->query("SELECT * FROM ".$tabla);
         return $registros->getResult();
-
     }
 
     public function obtenerRegistro($datos, $tabla)
     {
-
         $registro = $this->db->table($tabla);
         $registro->where($datos);
         return $registro->get()->getResultArray()[0];
-
     }
 
-    public function obtenerRegistrosCondicion($tabla, $condicion)
-    {
-
+    public function obtenerRegistrosCondicion($tabla, $condicion){
         $registros = $this->db->query("SELECT * FROM ".$tabla." WHERE ".$condicion);
+        exit(json_encode($this->db->error()));
         return $registros->getResult();
-
     }
 
     public function insertarRegistro($datos_crear, $tabla)
@@ -60,21 +53,30 @@ class AppartaModel extends Model
         return $eliminar->delete();
     }
 
-    public function obtenerReservasActivas()
+    public function obtenerReservasActivas($fecha_actual)
     {
-        $reservas = $this->db->query("SELECT * FROM reserva WHERE fecha_inicio >= GETDATE() AND fecha_fin < GETDATE() AND estado_reserva = 'confirmada'");
+        $reservas = $this->db->query("SELECT * FROM reserva WHERE fecha_inicio <= '$fecha_actual' AND fecha_fin > '$fecha_actual' AND estado_reserva = 'Confirmada'");
         return $reservas->getResult();
     }
 
-    public function favorito($id_usuario, $id_vivienda, $condicion)
-    {
-        if($condicion == "insertar"){
-            $this->db->query("INSERT INTO favorito(id_usuario, id_vivienda) VALUES (".$id_usuario.", ".$id_vivienda.")");
-        }
-        else{
-            $this->db->query("DELETE FROM favorito WHERE id_usuario='".$id_usuario."' and id_vivienda='".$id_vivienda."' ");
-        }
+    public function listarMesas(){
+        $registros = $this->db->query("
+        SELECT m.id_mesa, m.id_tipo_mesa, tm.tipo_mesa, estado_mesa 
+        FROM mesa m 
+        INNER JOIN tipo_mesa tm ON m.id_tipo_mesa = tm.id_tipo_mesa");
+        return $registros->getResult();
+    }
 
+    public function obtenerReservasHoy(){
+        $registros = $this->db->query("
+        SELECT r.id_reserva, r.id_usuario, u.nombre_usuario nombre_cliente, u.apellido_usuario apellido_cliente, r.id_mesa, tp.tipo_mesa, r.fecha_inicio, r.fecha_fin, r.num_personas, r.estado_reserva
+        FROM reserva r
+        INNER JOIN usuario u ON r.id_usuario = u.id_usuario
+        INNER JOIN mesa m ON r.id_mesa = m.id_mesa
+        INNER JOIN tipo_mesa tp ON m.id_tipo_mesa = tp.id_tipo_mesa
+        WHERE DATE(r.fecha_inicio) = CURDATE()
+        order by r.fecha_inicio");
+        return $registros->getResult();
     }
 
 }

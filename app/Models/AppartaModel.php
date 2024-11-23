@@ -19,7 +19,7 @@ class AppartaModel extends Model
 
         $registro = $this->db->table($tabla);
         $registro->where($datos);
-        return $registro->get()->getResultArray();
+        return $registro->get()->getResultArray()[0];
 
     }
 
@@ -54,6 +54,12 @@ class AppartaModel extends Model
         $eliminar = $this->db->table($tabla);
         $eliminar->where($id);
         return $eliminar->delete();
+    }
+
+    public function obtenerReservasActivas()
+    {
+        $reservas = $this->db->query("SELECT * FROM reserva WHERE fecha_inicio >= GETDATE() AND fecha_fin < GETDATE() AND estado_reserva = 'confirmada'");
+        return $reservas->getResult();
     }
 
     public function favorito($id_usuario, $id_vivienda, $condicion)

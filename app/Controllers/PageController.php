@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\HouslysModel;
+use App\Models\AppartaModel;
 
 class PageController extends BaseController
 {
@@ -17,23 +17,17 @@ class PageController extends BaseController
         else{
             $tipo_usuario = session('tipo_usuario');
             $nombre_usuario = session('nombre_usuario');
-            $mensaje = session('mensaje');
+            // $mensaje = session('mensaje');
 
-            $Houslys = new HouslysModel();
-            $viviendas = $Houslys->obtenerRegistrosCondicion('vivienda', "id_usuario='".$id_usuario."'");
-            $favoritos = $Houslys->obtenerRegistrosCondicion('vivienda', "id_vivienda IN (SELECT id_vivienda FROM favorito WHERE id_usuario ='".$id_usuario."')");
+            $Apparta = new AppartaModel();
+            // $reservas_actuales = $Apparta->obtenerRegistrosCondicion('reserva', "id_usuario='".$id_usuario."' AND estado_reserva='confirmada'");
+            // $historial_reservas = $Apparta->obtenerRegistrosCondicion('reverva', "id_usuario='".$id_usuario."' AND estado_reserva<>'confirmada'");
 
             $datos =["titulo"=>"Mi perfil", "estilo"=>"perfil"];
-            $lista_viviendas = ["viviendas_publicadas" => $viviendas, "viviendas_favoritas" => $favoritos, "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
-            
-            if($tipo_usuario=='Admin' or $tipo_usuario=='SuperAdmin'){
-                echo view("pages/admin/menu");
-            }else{
-                echo view("pages/menu");
-            }
-            echo view("pages/perfil", $lista_viviendas);
+            echo view("pages/menu");
+            echo view("pages/perfil");
             echo view("general/footer");
         }
     }
@@ -184,33 +178,43 @@ class PageController extends BaseController
         }
     }
 
-    public function viviendas()
-    {
-
+    public function mesas(){
         $id_usuario = session('id_usuario');
 
         if($id_usuario==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
-
+        }else{
+            $mensaje = session('mensaje');
             $tipo_usuario = session('tipo_usuario');
+            $this->asignarMesasOcupadas();
 
-            $Houslys = new HouslysModel();
-            $viviendas = $Houslys->obtenerRegistrosCondicion('vivienda', "estado_vivienda='Desocupada' and id_usuario!='".$id_usuario."'");
-            $favoritos = $Houslys->obtenerRegistrosCondicion('favorito', "id_usuario='".$id_usuario."'");
-
-            $lista_viviendas = ["viviendas" => $viviendas, "favoritos" => $favoritos];
-            $datos =["titulo"=>"Viviendas disponibles", "estilo"=>"viviendas"];
+            $Apparta = new AppartaModel();
+            $mesas = $Apparta->listarRegistros('mesa');
+            
+            $data_mesas = ["mesas" => $mesas, "mensaje" => $mensaje];
+            $datos =["titulo"=>"Mesas", "estilo"=>"mesas"];
 
             echo view("general/header", $datos);
-            if($tipo_usuario=='Admin' or $tipo_usuario=='SuperAdmin'){
-                echo view("pages/admin/menu");
-            }else{
-                echo view("pages/menu");
-            }
-            echo view("pages/viviendas", $lista_viviendas);
+            echo view("pages/menu");
+            echo view("pages/mesas", $data_mesas);
             echo view("general/footer");
+        }
+    }
+
+    public function asignarMesasOcupadas(){
+        $mesas = $Apparta->listarRegistros('mesa');
+        $reservas_activas = $Apparta->obtenerReservasActivas();
+        foreach($mesas as $mesa){
+            $mesa->estado_mesa = "Desocupada";
+            foreach($reservas_activas as $reserva){
+                if($reserva->id_mesa == $mesa->id_mesa){
+                    $mesa->estado_mesa = "Ocupada";
+                }
+            }
+        }
+        foreach($mesas as $mesa){
+            $datos_actualizar = ["estado_mesa" => $mesa->estado_mesa];
+            $Apparta->actualizarRegistro($datos_actualizar, $mesa->id_mesa, 'mesa', 'id_mesa');
         }
     }
 
@@ -250,16 +254,6 @@ class PageController extends BaseController
         }
     }
 
-    public function Xml()
-    {
-        $Houslys = new HouslysModel();
-        $viviendas = $Houslys->listarRegistros('vivienda');
-
-        $lista_viviendas = ["viviendas" => $viviendas];
-
-        echo view("pages/xml", $lista_viviendas);
-    }
-
     public function favorito()
     {
 
@@ -279,6 +273,5 @@ class PageController extends BaseController
         }
 
     }
-
 
 }

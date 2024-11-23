@@ -68,16 +68,19 @@ class LoginController extends BaseController
             $Apparta = new AppartaModel();
             $datosUsuario = $Apparta->obtenerRegistro(['correo_usuario' => $usuario], 'usuario');
 
-            if(count($datosUsuario)>0 && ($password==$datosUsuario[0]['password_usuario'])){
+            if(count($datosUsuario)>0 && ($password==$datosUsuario['password_usuario'])){
+
+                $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $datosUsuario['id_tipo_usuario']], 'tipo_usuario');
 
                 $datos = [
-                        "id_usuario" => $datosUsuario[0]['id_usuario'],
-                        "id_tipo_usuario" => $datosUsuario[0]['id_tipo_usuario'],
-                        "nombre_usuario" => $datosUsuario[0]['nombre_usuario'],
-                        "apellido_usuario" => $datosUsuario[0]['apellido_usuario'],
-                        "celular_usuario" => $datosUsuario[0]['celular_usuario'],
-                        "correo_usuario" => $datosUsuario[0]['correo_usuario'],
-                        "password_usuario" => $datosUsuario[0]['password_usuario']
+                        "id_usuario" => $datosUsuario['id_usuario'],
+                        "id_tipo_usuario" => $datosUsuario['id_tipo_usuario'],
+                        "tipo_usuario" => $tipoUsuario['tipo_usuario'],
+                        "nombre_usuario" => $datosUsuario['nombre_usuario'],
+                        "apellido_usuario" => $datosUsuario['apellido_usuario'],
+                        "celular_usuario" => $datosUsuario['celular_usuario'],
+                        "correo_usuario" => $datosUsuario['correo_usuario'],
+                        "password_usuario" => $datosUsuario['password_usuario']
                 ];
 
                 $session = session();

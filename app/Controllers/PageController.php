@@ -63,7 +63,13 @@ class PageController extends BaseController{
 
             date_default_timezone_set('America/Bogota');
             $fecha_actual = date("Y-m-d");
-            $hora_actual = date("H:i:00");
+            
+            $hora_actual = time();
+            $minutos = date('i', $hora_actual);
+            $minutos = $minutos == 55 ? '00' : $minutos+5;
+            $minutos_redondeados = floor($minutos / 5) * 5;
+            $hora_redondeada = strtotime(date('H', $hora_actual) . ':' . str_pad($minutos_redondeados, 2, '0', STR_PAD_LEFT));
+            $hora_actual = date('H:i:00', $hora_redondeada);
 
             $datos = ["titulo"=>"Reservar", "estilo"=>"actualizar"];
             $usuario = ["id_usuario"=>$id_usuario, "clientes"=>$clientes, "mesas_disponibles"=> $mesas_disponibles, "fecha_actual"=>$fecha_actual, "hora_actual"=>$hora_actual, "mensaje" => $mensaje];

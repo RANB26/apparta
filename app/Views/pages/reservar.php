@@ -38,11 +38,11 @@
                         </div>
                         <div class="form-group col-sm-4 flex-column d-flex"> 
                             <label class="form-control-label px-3">Hora de inicio<span class="text-danger"> *</span></label>
-                            <input class="form-control" type="time" name="hora_inicio" min='<?php echo $hora_actual ?>' step="60" required>
+                            <input class="form-control" type="time" name="hora_inicio" min='<?php echo $hora_actual ?>' step="300" required>
                         </div>
                         <div class="form-group col-sm-4 flex-column d-flex">
                             <label class="form-control-label px-3">Hora final</label> 
-                            <input class="form-control" type="time" name="hora_fin" min='<?php echo $hora_actual ?>' step="60" required>
+                            <input class="form-control" type="time" name="hora_fin" min='<?php echo $hora_actual ?>' step="300" required>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-4">

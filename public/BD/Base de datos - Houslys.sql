@@ -39,7 +39,10 @@ fecha_inicio datetime not null,
 fecha_fin datetime not null,
 num_personas int(2) not null,
 estado_reserva varchar(15) default 'Confirmada' not null,
+id_usuario_registra int not null,
+fecha_registra datetime not null default current_timestamp,
 foreign key(id_usuario) references usuario(id_usuario),
+foreign key(id_usuario_registra) references usuario(id_usuario),
 foreign key(id_mesa) references mesa(id_mesa)
 );
 

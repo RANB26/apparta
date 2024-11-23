@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\HouslysModel;
+use App\Models\AppartaModel;
 
 class UserController extends BaseController
 {
@@ -61,26 +61,21 @@ class UserController extends BaseController
         $id_usuario = $_POST['id_usuario'];
 
         $datos_actualizar = [
-            "tipo_usuario" =>  $_POST['tipo_usuario'],
             "nombre_usuario" => $_POST['nombre_usuario'],
             "apellido_usuario" => $_POST['apellido_usuario'],
-            "fnacimiento_usuario" => $_POST['fnacimiento_usuario'],
             "celular_usuario" => $_POST['celular_usuario'],
             "correo_usuario" => $_POST['correo_usuario'],
             "password_usuario" => $_POST['password_usuario']
-            
         ];
 
-        $Houslys = new HouslysModel();
-        $respuesta = $Houslys->actualizarRegistro($datos_actualizar, $id_usuario, 'usuario', 'id_usuario');
-
+        $AppartaModel = new AppartaModel();
+        $respuesta = $AppartaModel->actualizarRegistro($datos_actualizar, $id_usuario, 'usuario', 'id_usuario');
         if($respuesta){
             if($pagina=="1"){
                 return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','registro actualizado');
             }else{
                 return redirect()->to(base_url().'gesusuarios/usuario/'.$id_usuario)->with('mensaje','registro actualizado');
             }
-            
         }else{
             if($pagina=="1"){
                 return redirect()->to(base_url().'actualizarmiperfil/'.$id_usuario)->with('mensaje','error');

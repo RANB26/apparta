@@ -35,7 +35,6 @@ class PageController extends BaseController
     public function actualizarPerfil($id_usuario)
     {
         $id = session('id_usuario');
-        $tipo_usuario = session('tipo_usuario');
 
         if($id==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
@@ -43,18 +42,16 @@ class PageController extends BaseController
         else{
             $mensaje = session('mensaje');
 
-            $Houslys = new HouslysModel();
-            $usuario = $Houslys->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
+            $Apparta = new AppartaModel();
+            $usuario = $Apparta->ObtenerRegistro(['id_usuario' => $id_usuario], 'usuario');
+            $tipoUsuario = $Apparta->obtenerRegistro(['id_tipo_usuario' => $usuario['id_tipo_usuario']], 'tipo_usuario');
+            $usuario['tipo_usuario'] = $tipoUsuario['tipo_usuario'];
 
-            $datos =["titulo"=>"Gestionar usuarios", "estilo"=>"actualizar"];
+            $datos =["titulo"=>"Actualizar mi perfil", "estilo"=>"actualizar"];
             $info_usuario = ["info_usuario"=>$usuario, "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
-            if($tipo_usuario=='Admin' or $tipo_usuario=='SuperAdmin'){
-                echo view("pages/admin/menu");
-            }else{
-                echo view("pages/menu");
-            }
+            echo view("pages/menu");
             echo view("pages/actualizarmiperfil", $info_usuario);
             echo view("pages/mensajes");
             echo view("general/footer");

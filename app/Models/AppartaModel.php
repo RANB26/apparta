@@ -45,8 +45,12 @@ class AppartaModel extends Model
         $actualizar = $this->db->table($tabla);
         $actualizar->set($datosActualizar);
         $actualizar->where($tipo_id, $id);
-        return $actualizar->update();
 
+        if($actualizar->update() === false){
+            return $this->db->error();
+        }else{
+            return true;
+        }
     }
 
     public function eliminarRegistro($id, $tabla)

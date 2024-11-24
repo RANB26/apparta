@@ -16,6 +16,9 @@
     else if(mensaje=='mesa eliminada'){
         Swal.fire('¡Mesa eliminada!','','success');
     }
+    else if(mensaje=='reserva cancelada'){
+        Swal.fire('!Reserva cancelada!','','success');
+    }
     else if(mensaje=='inicia sesion'){
         Swal.fire('¡Debe iniciar sesión primero!','','error');
     } 
@@ -28,6 +31,8 @@
         Swal.fire('¡Error!','Ocurrió un error al eliminar el usuario','error');
     }else if(mensaje=='error_reservas'){
         Swal.fire('¡Error!','Ocurrió un error al eliminar las reservas del usuario','error');
+    }else if(mensaje=='error_cancelar'){
+        Swal.fire('¡Error!','Ocurrió un error al cancelar la reserva','error');
     }
 
 </script>

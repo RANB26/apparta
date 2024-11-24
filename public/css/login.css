@@ -187,4 +187,5 @@ display: none;
   background-color: transparent;
   color: #da9a60;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+  border: solid 1px #da9a60;
 }

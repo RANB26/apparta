@@ -58,7 +58,17 @@ VALUES (12345, 1, 'SuperAdmin', '1', '0000000000', 'superadmin@gmail.com', '123'
 INSERT INTO usuario (identificacion_usuario, id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario)
 VALUES (23456, 2, 'Admin', '1', '0000000000', 'admin@gmail.com', '123');
 
+INSERT INTO usuario (identificacion_usuario, id_tipo_usuario, nombre_usuario, apellido_usuario, celular_usuario, correo_usuario, password_usuario)
+VALUES (34567, 3, 'Cliente', '1', '0000000000', 'cliente@gmail.com', '');
+
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Pequeña', 2);
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Mediana', 4);
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Grande', 8);
 INSERT INTO tipo_mesa (tipo_mesa, capacidad_mesa) VALUES ('Reunión', 12);
+
+INSERT INTO mesa (id_tipo_mesa, estado_mesa) VALUES (1, 'Disponible');
+INSERT INTO mesa (id_tipo_mesa, estado_mesa) VALUES (2, 'Disponible');
+INSERT INTO mesa (id_tipo_mesa, estado_mesa) VALUES (3, 'Disponible');
+INSERT INTO mesa (id_tipo_mesa, estado_mesa) VALUES (4, 'Disponible');
+
+INSERT INTO reserva (id_usuario, id_mesa, fecha_inicio, fecha_fin, num_personas, id_usuario_registra) VALUES(3,1,'2024-11-30 12:50:00','2024-11-30 13:50:00',2,2)

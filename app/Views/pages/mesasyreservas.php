@@ -78,7 +78,7 @@
                                     </a>
                                 <?php } else if($reserva->estado_reserva == 'Finalizada'){ ?>
                                     <a style='margin: -10px 8px 0 0'>
-                                        <i class="fas fa-check" style='color: #7DDA58'></i>
+                                        <i class="fas fa-check-circle" style='color: #0086E0'></i>
                                     </a>
                                 <?php }?>
                             </div>

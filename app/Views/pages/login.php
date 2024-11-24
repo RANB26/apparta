@@ -66,6 +66,10 @@
 			Swal.fire('¡Debe iniciar sesión!','','error');
 		} else if(mensaje=='error'){
 			Swal.fire('¡Error!','Ha ingresado datos incorrectos','error');
+		}else if(mensaje=='error_cliente'){
+			Swal.fire('¡Error!','Los clientes no pueden acceder a la página','error');
+		}else if(mensaje=='no_encontrado'){
+			Swal.fire('¡Error!','Usuario no encontrado','error');
 		}
 	</script>
 

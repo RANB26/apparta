@@ -15,6 +15,7 @@ class AppartaModel extends Model
     {
         $registro = $this->db->table($tabla);
         $registro->where($datos);
+        if($registro->countAllResults() == 0) return array();
         return $registro->get()->getResultArray()[0];
     }
 

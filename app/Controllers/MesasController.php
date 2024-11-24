@@ -7,6 +7,43 @@ use App\Models\AppartaModel;
 class MesasController extends BaseController
 {
 
+    public function crearMesa(){
+        $id = session('id_usuario');
+
+        if($id==""){
+            return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
+        }else{
+            $mensaje = session('mensaje');
+            $datos =["titulo"=>"Crear mesa", "estilo"=>"actualizar"];
+
+            $Apparta = new AppartaModel();
+            $tipos_mesa = $Apparta->listarRegistros('tipo_mesa');
+            $info_mesa = ["mensaje" => $mensaje, "tipos_mesa" => $tipos_mesa];
+
+            echo view("general/header", $datos);
+            echo view("pages/menu");
+            echo view("pages/crearmesa", $info_mesa);
+            echo view("pages/mensajes");
+            echo view("general/footer");
+        }
+
+    }
+
+    public function insertarMesa(){
+
+        $datos_crear = ["id_tipo_mesa" => $_POST['id_tipo_mesa'], "estado_mesa" =>  $_POST['estado_mesa']];
+
+        $Apparta = new AppartaModel();
+        $respuesta = $Apparta->insertarRegistro($datos_crear, 'mesa');
+
+        if($respuesta>0){
+            return redirect()->to(base_url().route_to('crear_mesa'))->with('mensaje','registrado');
+        }else{
+            return redirect()->to(base_url().route_to('crear_mesa'))->with('mensaje','error');
+        }
+
+    }
+
     public function gesMesas()
     {
 
@@ -70,6 +107,21 @@ class MesasController extends BaseController
             return redirect()->to(base_url().'gesmesas/mesa/'.$id_mesa)->with('mensaje','registro actualizado');
         }else{
             return redirect()->to(base_url().'gesmesas/mesa/'.$id_mesa)->with('mensaje','error');
+        }
+
+    }
+
+    public function eliminarMesa($id_usuario)
+    {
+
+        $Apparta = new AppartaModel();
+        $datos =["id_mesa" => $id_usuario];
+
+        $respuesta = $Apparta->eliminarRegistro($datos, 'mesa');
+        if($respuesta){
+            return redirect()->to(base_url().route_to('gesmesas'))->with('mensaje','mesa eliminada');
+        }else{
+            return redirect()->to(base_url().route_to('gesmesas'))->with('mensaje','error');
         }
 
     }

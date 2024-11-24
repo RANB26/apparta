@@ -68,8 +68,7 @@ class PageController extends BaseController{
             }
 
             $clientes = $Apparta->obtenerRegistrosCondicion('usuario', 'id_tipo_usuario = 3');
-            $this->asignarMesasOcupadas();
-            $mesas_disponibles = $Apparta->listarMesas('Disponible');
+            $mesas = $Apparta->listarMesas();
 
             date_default_timezone_set('America/Bogota');
             $fecha_actual = date("Y-m-d");
@@ -85,7 +84,7 @@ class PageController extends BaseController{
             $info_reservar = [
                 "id_usuario"=>$id_usuario, 
                 "clientes"=>$clientes, 
-                "mesas_disponibles"=> $mesas_disponibles, 
+                "mesas"=> $mesas,
                 "fecha_actual"=>$fecha_actual, 
                 "hora_actual"=>$hora_actual, 
                 "cliente_reservar"=>$cliente_reservar, 

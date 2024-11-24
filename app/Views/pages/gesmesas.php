@@ -23,7 +23,6 @@
                         <td><?php echo $i->estado_mesa ?></td>                  
                         <td>
                             <a href="<?php echo base_url().route_to('gesmesa', $i->id_mesa) ?>" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="<?php echo base_url().route_to('eliminar_mesa', $i->id_mesa) ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
                     <?php } ?>

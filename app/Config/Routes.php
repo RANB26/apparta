@@ -52,6 +52,11 @@ $routes->get('/gesmesas/mesa/(:num)', 'MesasController::gesMesa/$1', ['as' => 'g
 $routes->post('/actualizarmesa', 'MesasController::actualizarMesa', ['as' => 'actualizar_mesa']);
 $routes->get('/eliminarmesa/(:num)', 'MesasController::eliminarMesa/$1', ['as' => 'eliminar_mesa']);
 
+$routes->get('/gesreservas', 'ReservasController::gesReservas', ['as' => 'gesreservas']);
+$routes->get('/gesreservas/reserva/(:num)', 'ReservasController::gesReserva/$1', ['as' => 'gesreserva']);
+$routes->post('/actualizareserva', 'ReservasController::actualizarReserva', ['as' => 'actualizar_reserva']);
+$routes->get('/cancelareserva/(:num)', 'ReservasController::cancelarReserva/$1', ['as' => 'cancelar_reserva']);
+
 $routes->post('/crearusuario', 'LoginController::crearUsuario', ['as' => 'crear_usuario']);
 
 /*

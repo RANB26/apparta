@@ -74,19 +74,4 @@ class MesasController extends BaseController
 
     }
 
-    public function eliminarMesa($id_usuario)
-    {
-
-        $Apparta = new AppartaModel();
-        $datos =["id_mesa" => $id_usuario];
-
-        $respuesta = $Apparta->eliminarRegistro($datos, 'mesa');
-        if($respuesta){
-            return redirect()->to(base_url().route_to('gesmesas'))->with('mensaje','mesa eliminada');
-        }else{
-            return redirect()->to(base_url().route_to('gesmesas'))->with('mensaje','error');
-        }
-
-    }
-
 }

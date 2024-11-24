@@ -25,7 +25,7 @@
                         <div class="form-group col-sm-4 flex-column d-flex"> 
                             <label class="form-control-label px-3">Mesa<span class="text-danger"> *</span></label> 
                             <select class="form-select" name="id_mesa"> 
-                                <?php foreach($mesas_disponibles as $mesa){
+                                <?php foreach($mesas as $mesa){
                                     echo "<option value='".$mesa->id_mesa."'> Mesa ".$mesa->id_mesa." - ".$mesa->tipo_mesa."</option>";
                                 } ?>
                             </select>

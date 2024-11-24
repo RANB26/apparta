@@ -84,6 +84,23 @@ class AppartaModel extends Model
         return $registros->getResult();
     }
 
+    public function listarReservas($id_reserva = null){
+
+        $reserva = "";
+        if($id_reserva != null) $reserva = " WHERE r.id_reserva = '$id_reserva' ";
+
+        $registros = $this->db->query("
+        SELECT r.id_reserva, r.id_usuario, u.nombre_usuario nombre_cliente, u.apellido_usuario apellido_cliente, r.id_mesa, tp.tipo_mesa, r.fecha_inicio, r.fecha_fin, r.num_personas, r.estado_reserva, r.fecha_registra, r.id_usuario_registra, u2.nombre_usuario nombre_registra, u2.apellido_usuario apellido_registra
+        FROM reserva r
+        INNER JOIN usuario u ON r.id_usuario = u.id_usuario
+        INNER JOIN usuario u2 ON r.id_usuario_registra = u2.id_usuario
+        INNER JOIN mesa m ON r.id_mesa = m.id_mesa
+        INNER JOIN tipo_mesa tp ON m.id_tipo_mesa = tp.id_tipo_mesa 
+        $reserva
+        order by r.fecha_inicio DESC");
+        return $registros->getResult();
+    }
+
     public function obtenerReservasHoy(){
         $registros = $this->db->query("
         SELECT r.id_reserva, r.id_usuario, u.nombre_usuario nombre_cliente, u.apellido_usuario apellido_cliente, r.id_mesa, tp.tipo_mesa, r.fecha_inicio, r.fecha_fin, r.num_personas, r.estado_reserva

@@ -15,10 +15,16 @@ class AppartaModel extends Model
     {
         $registro = $this->db->table($tabla);
         $registro->where($datos);
-        if($login){
-            if($registro->countAllResults() == 0) return array();
+        $resultado = $registro->get()->getResultArray();
+        if($login==true){
+            if(!isset($resultado[0])){
+                return false;
+            }else{
+                return $resultado[0];
+            } 
+        }else{
+            return $resultado[0];
         }
-        return $registro->get()->getResultArray()[0];
     }
 
     public function obtenerRegistrosCondicion($tabla, $condicion){

@@ -31,8 +31,7 @@ class LoginController extends BaseController
 
         if($usuario == "" or $password==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','error');
-        }
-        else{
+        }else{
             
             $Apparta = new AppartaModel();
             $datosUsuario = $Apparta->obtenerRegistro(['correo_usuario' => $usuario], 'usuario', true);

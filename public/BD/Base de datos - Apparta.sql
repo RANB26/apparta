@@ -88,10 +88,10 @@ INSERT INTO mesa (id_tipo_mesa, id_estado_mesa) VALUES (2, 1);
 INSERT INTO mesa (id_tipo_mesa, id_estado_mesa) VALUES (3, 1);
 INSERT INTO mesa (id_tipo_mesa, id_estado_mesa) VALUES (4, 1);
 
-INSERT INTO estado_reserva(estado_reserva, cod_estado_reserva) VALUES ('Res_Act','Activa');
-INSERT INTO estado_reserva(estado_reserva, cod_estado_reserva) VALUES ('Res_Con','Confirmada');
-INSERT INTO estado_reserva(estado_reserva, cod_estado_reserva) VALUES ('Res_Fin','Finalizada');
-INSERT INTO estado_reserva(estado_reserva, cod_estado_reserva) VALUES ('Res_Can','Cancelada');
+INSERT INTO estado_reserva(cod_estado_reserva, estado_reserva) VALUES ('Res_Act','Activa');
+INSERT INTO estado_reserva(cod_estado_reserva, estado_reserva) VALUES ('Res_Con','Confirmada');
+INSERT INTO estado_reserva(cod_estado_reserva, estado_reserva) VALUES ('Res_Fin','Finalizada');
+INSERT INTO estado_reserva(cod_estado_reserva, estado_reserva) VALUES ('Res_Can','Cancelada');
 
 INSERT INTO reserva (id_usuario, id_mesa, fecha_inicio, fecha_fin, num_personas, id_estado_reserva, id_usuario_registra) 
 VALUES(3,1,'2024-11-30 12:50:00','2024-11-30 13:50:00',2,1,2)

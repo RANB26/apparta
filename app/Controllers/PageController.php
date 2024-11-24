@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AppartaModel;
+use App\Controllers\ReservasController;
 
 class PageController extends BaseController{
 
@@ -15,14 +16,16 @@ class PageController extends BaseController{
             $Apparta = new AppartaModel();
             $this->asignarMesasOcupadas();
             $mesas = $Apparta->listarMesas();
+            $mensaje = session('mensaje');
 
             $reservas_hoy = $Apparta->obtenerReservasHoy();
             $data_mesas_reservas = ["mesas" => $mesas, "reservas_hoy" => $reservas_hoy];
-            $datos =["titulo"=>"Mesas y reservas", "estilo"=>"mesasyreservas"];
+            $datos =["titulo"=>"Mesas y reservas", "estilo"=>"mesasyreservas", "mensaje" => $mensaje];
 
             echo view("general/header", $datos);
             echo view("pages/menu");
             echo view("pages/mesasyreservas", $data_mesas_reservas);
+            echo view("pages/mensajes");
             echo view("general/footer");
         }
     }
@@ -44,6 +47,36 @@ class PageController extends BaseController{
         foreach($mesas as $mesa){
             $datos_actualizar = ["estado_mesa" => $mesa->estado_mesa];
             $Apparta->actualizarRegistro($datos_actualizar, $mesa->id_mesa, 'mesa', 'id_mesa');
+        }
+    }
+
+    public function iniciarReserva($id_reserva){
+        $Reserva = new ReservasController();
+        $respuesta = $Reserva->cambiarEstadoReserva($id_reserva, 'Activa');
+        if($respuesta==true){
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','reserva iniciada');
+        }else{
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','error_iniciar');
+        }
+    }
+
+    public function finalizarReserva($id_reserva){
+        $Reserva = new ReservasController();
+        $respuesta = $Reserva->cambiarEstadoReserva($id_reserva, 'Finalizada');
+        if($respuesta==true){
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','reserva finalizada');
+        }else{
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','error_finalizar');
+        }
+    }
+
+    public function cancelarReserva($id_reserva){
+        $Reserva = new ReservasController();
+        $respuesta = $Reserva->cambiarEstadoReserva($id_reserva, 'Cancelada');
+        if($respuesta==true){
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','reserva cancelada');
+        }else{
+            return redirect()->to(base_url().route_to('mesas_reservas'))->with('mensaje','error_cancelar');
         }
     }
 

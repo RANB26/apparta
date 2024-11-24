@@ -19,6 +19,18 @@
     else if(mensaje=='reserva cancelada'){
         Swal.fire('!Reserva cancelada!','','success');
     }
+    else if(mensaje=='reserva iniciada'){
+        Swal.fire('!Reserva iniciada!','','success');
+    }
+    else if(mensaje=='error_iniciar'){
+        Swal.fire('¡Error!','Ocurrió un error al iniciar la reserva','error');
+    }
+    else if(mensaje=='reserva finalizada'){
+        Swal.fire('!Reserva finalizada!','','success');
+    }
+    else if(mensaje=='error_finalizar'){
+        Swal.fire('¡Error!','Ocurrió un error al finalizar la reserva','error');
+    }
     else if(mensaje=='inicia sesion'){
         Swal.fire('¡Debe iniciar sesión primero!','','error');
     } 

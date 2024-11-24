@@ -40,6 +40,9 @@ $routes->get('/reservar/(:num)', 'PageController::reservar/$1', ['as' => 'reserv
 $routes->post('/crearreserva', 'PageController::crearReserva', ['as' => 'crear_reserva']);
 $routes->get('/miperfil', 'PageController::perfil', ['as' => 'perfil']);
 $routes->get('/actualizarmiperfil/(:num)', 'PageController::actualizarPerfil/$1', ['as' => 'actualizar_perfil']);
+$routes->get('/iniciarreserva/(:num)', 'PageController::iniciarReserva/$1', ['as' => 'iniciar_reserva']);
+$routes->get('/finalizarreserva/(:num)', 'PageController::finalizarReserva/$1', ['as' => 'finalizar_reserva']);
+$routes->get('/cancelarreservapages/(:num)', 'PageController::cancelarReserva/$1', ['as' => 'cancelar_reserva_pages']);
 
 $routes->get('/gesusuarios', 'UserController::gesUsuarios', ['as' => 'gesusuarios']);
 $routes->get('/gesusuarios/perfilcliente/(:num)', 'UserController::perfilCliente/$1', ['as' => 'perfil_cliente']);

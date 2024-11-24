@@ -63,14 +63,34 @@
             <?php foreach($reservas_hoy as $reserva){ ?>
                 <div class="col-lg-4 col-md-5 mx-3 my-3">
                     <a>
+                        <div class="opciones">
+                            <div class="estado">
+                                <?php if($reserva->estado_reserva == 'Activa'){ ?>
+                                    <a href="<?php echo base_url().route_to('finalizar_reserva', $reserva->id_reserva) ?>" style='margin: -10px 10px 0 0'>
+                                        <i class="fas fa-hourglass-end" style='color: #CECECE'></i>
+                                    </a>
+                                <?php } else if($reserva->estado_reserva == 'Confirmada'){ ?>
+                                    <a href="<?php echo base_url().route_to('iniciar_reserva', $reserva->id_reserva) ?>" style='margin: -10px 8px 0 0'>
+                                        <i class="fas fa-calendar-check" style='color: #7DDA58'></i>
+                                    </a>
+                                    <a href="<?php echo base_url().route_to('cancelar_reserva_pages', $reserva->id_reserva) ?>" style='margin: -10px 10px 0 0'>
+                                        <i class="fas fa-times" style='color: #D20103'></i>
+                                    </a>
+                                <?php } else if($reserva->estado_reserva == 'Finalizada'){ ?>
+                                    <a style='margin: -10px 8px 0 0'>
+                                        <i class="fas fa-check" style='color: #7DDA58'></i>
+                                    </a>
+                                <?php }?>
+                            </div>
+                        </div>
                         <div class="card">
                             <img src="<?php echo base_url();?>/img/reserva.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" style="padding:0px; padding-bottom:20px;">
+                            <div class="card-body" style="padding:0px; padding-bottom:20px; text-align:center">
                                 <h5 class="card-title"><?php echo $reserva->nombre_cliente." ".$reserva->apellido_cliente ?></h5>
                                 <h6 class="card-text">Mesa <?php echo $reserva->id_mesa ?> - <?php echo $reserva->tipo_mesa ?></h6>
                                 <h6 class="card-text"><?php echo $reserva->num_personas ?> personas</h6>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer" style="text-align:center">
                                 <small class="text-muted"><?php echo date("H:i", strtotime($reserva->fecha_inicio)) ?> - <?php echo date("H:i", strtotime($reserva->fecha_fin)) ?></small>
                             </div>
                         </div>

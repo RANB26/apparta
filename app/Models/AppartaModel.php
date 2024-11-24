@@ -66,7 +66,8 @@ class AppartaModel extends Model
 
     public function obtenerReservasActivas($fecha_actual)
     {
-        $reservas = $this->db->query("SELECT * FROM reserva WHERE fecha_inicio <= '$fecha_actual' AND fecha_fin > '$fecha_actual' AND estado_reserva = 'Confirmada'");
+        // $reservas = $this->db->query("SELECT * FROM reserva WHERE fecha_inicio <= '$fecha_actual' AND fecha_fin > '$fecha_actual' AND estado_reserva = 'Activa'");
+        $reservas = $this->db->query("SELECT * FROM reserva WHERE estado_reserva = 'Activa'");
         return $reservas->getResult();
     }
 
@@ -108,7 +109,7 @@ class AppartaModel extends Model
         INNER JOIN usuario u ON r.id_usuario = u.id_usuario
         INNER JOIN mesa m ON r.id_mesa = m.id_mesa
         INNER JOIN tipo_mesa tp ON m.id_tipo_mesa = tp.id_tipo_mesa
-        WHERE DATE(r.fecha_inicio) = CURDATE()
+        WHERE DATE(r.fecha_inicio) = CURDATE() and r.estado_reserva != 'Cancelada'
         order by r.fecha_inicio");
         return $registros->getResult();
     }

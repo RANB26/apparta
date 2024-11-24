@@ -79,6 +79,7 @@ class ReservasController extends BaseController
     {
 
         $Apparta = new AppartaModel();
+        date_default_timezone_set('America/Bogota');
         $id_reserva = $_POST['id_reserva'];
         $hora_inicio = $_POST['hora_inicio'];
         $hora_fin = $_POST['hora_fin'];

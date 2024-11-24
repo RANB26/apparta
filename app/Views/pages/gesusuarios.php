@@ -32,7 +32,7 @@
                         <td>
                             <?php if($i->tipo_usuario=="Cliente"){ ?>
                                 <a href="<?php echo base_url().route_to('perfil_cliente', $i->id_usuario) ?>" class="info" title="Perfil del cliente" data-toggle="tooltip"><i class="material-icons">&#xe88e;</i></a>
-                                <a href="<?php echo base_url().route_to('reservar', $i->id_usuario) ?>" class="add" title="Reservar mesa" data-toggle="tooltip"><i class="material-icons">&#xeac6;</i></a>
+                                <a href="<?php echo base_url().route_to('reservar', $i->id_usuario) ?>" class="add" title="Reservar mesa" data-toggle="tooltip"><i class="material-icons">&#xebcc;</i></a>
                             <?php } ?>
                             <a href="<?php echo base_url().route_to('gesusuario', $i->id_usuario) ?>" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <?php if((session('tipo_usuario')=='SuperAdmin' and $i->id_usuario!=session('id_usuario')) or $i->tipo_usuario=="Cliente"){ ?>

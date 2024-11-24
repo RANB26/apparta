@@ -23,29 +23,6 @@ class LoginController extends BaseController
 
     }
 
-    // public function crearUsuario()
-    // {
-    //     $datos_crear = [
-    //                     "tipo_usuario" => "Usuario",
-    //                     "nombre_usuario" => $_POST['nombre_usuario'],
-    //                     "apellido_usuario" => $_POST['apellido_usuario'],
-    //                     "fnacimiento_usuario" => $_POST['fnacimiento_usuario'],
-    //                     "celular_usuario" => $_POST['celular_usuario'],
-    //                     "correo_usuario" => $_POST['correo_usuario'],
-    //                     "password_usuario" => $_POST['password_usuario']
-    //                 ];
-
-    //     $Houslys = new HouslysModel();
-    //     $respuesta = $Houslys->insertarRegistro($datos_crear, 'usuario');
-
-    //     if($respuesta>0){
-    //         return redirect()->to(base_url().route_to('login'))->with('mensaje','registrado');
-    //     }else{
-    //         return redirect()->to(base_url().route_to('login'))->with('mensaje','error');
-    //     }
-
-    // }
-
     public function ingresar()
     {
         

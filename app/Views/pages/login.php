@@ -62,9 +62,7 @@
 
 		let mensaje = '<?php echo $mensaje ?>';
 
-		if(mensaje=='registrado'){
-			Swal.fire('¡Bienvenido!','Se ha registrado con exito','success');
-		}else if(mensaje=='inicia sesion'){
+		if(mensaje=='inicia sesion'){
 			Swal.fire('¡Debe iniciar sesión!','','error');
 		} else if(mensaje=='error'){
 			Swal.fire('¡Error!','Ha ingresado datos incorrectos','error');

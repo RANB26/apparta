@@ -6,6 +6,49 @@ use App\Models\AppartaModel;
 
 class UserController extends BaseController
 {
+
+    public function crearUsuario()
+    {
+        $id = session('id_usuario');
+
+        if($id==""){
+            return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
+        }else{
+            $mensaje = session('mensaje');
+            $datos =["titulo"=>"Crear usuario", "estilo"=>"actualizar"];
+            $info_usuario = ["mensaje" => $mensaje];
+
+            echo view("general/header", $datos);
+            echo view("pages/menu");
+            echo view("pages/crearusuario", $info_usuario);
+            echo view("pages/mensajes");
+            echo view("general/footer");
+        }
+
+    }
+
+    public function insertarUsuario()
+    {
+        $datos_crear = [
+            "identificacion_usuario" => $_POST['identificacion_usuario'],
+            "id_tipo_usuario" => $_POST['id_tipo_usuario'],
+            "nombre_usuario" => $_POST['nombre_usuario'],
+            "apellido_usuario" => $_POST['apellido_usuario'],
+            "celular_usuario" => $_POST['celular_usuario'],
+            "correo_usuario" => $_POST['correo_usuario'],
+            "password_usuario" => $_POST['password_usuario'],
+        ];
+
+        $Apparta = new AppartaModel();
+        $respuesta = $Apparta->insertarRegistro($datos_crear, 'usuario');
+
+        if($respuesta>0){
+            return redirect()->to(base_url().route_to('crear_usuario'))->with('mensaje','registrado');
+        }else{
+            return redirect()->to(base_url().route_to('crear_usuario'))->with('mensaje','error');
+        }
+
+    }
     
     public function gesUsuarios()
     {
@@ -14,8 +57,7 @@ class UserController extends BaseController
 
         if($id_usuario==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
+        }else{
             $mensaje = session('mensaje');
 
             $Apparta = new AppartaModel();
@@ -38,8 +80,7 @@ class UserController extends BaseController
 
         if($id==""){
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
-        }
-        else{
+        }else{
             $mensaje = session('mensaje');
 
             $Apparta = new AppartaModel();

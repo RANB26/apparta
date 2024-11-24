@@ -46,6 +46,8 @@ $routes->get('/gesusuarios/perfilcliente/(:num)', 'UserController::perfilCliente
 $routes->get('/gesusuarios/usuario/(:num)', 'UserController::gesUsuario/$1', ['as' => 'gesusuario']);
 $routes->post('/actualizarusuario/(:num)', 'UserController::actualizarUsuario/$1', ['as' => 'actualizar_usuario']);
 $routes->get('/eliminarusuario/(:num)', 'UserController::eliminarUsuario/$1', ['as' => 'eliminar_usuario']);
+$routes->get('/crearusuario', 'UserController::crearUsuario', ['as' => 'crear_usuario']);
+$routes->post('/insertarusuario', 'UserController::insertarUsuario', ['as' => 'insertar_usuario']);
 
 $routes->get('/gesmesas', 'MesasController::gesMesas', ['as' => 'gesmesas']);
 $routes->get('/gesmesas/mesa/(:num)', 'MesasController::gesMesa/$1', ['as' => 'gesmesa']);
@@ -57,7 +59,6 @@ $routes->get('/gesreservas/reserva/(:num)', 'ReservasController::gesReserva/$1',
 $routes->post('/actualizareserva', 'ReservasController::actualizarReserva', ['as' => 'actualizar_reserva']);
 $routes->get('/cancelareserva/(:num)', 'ReservasController::cancelarReserva/$1', ['as' => 'cancelar_reserva']);
 
-$routes->post('/crearusuario', 'LoginController::crearUsuario', ['as' => 'crear_usuario']);
 
 /*
 * --------------------------------------------------------------------

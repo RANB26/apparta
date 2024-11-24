@@ -86,7 +86,7 @@
     else if(mensaje=='capacidad'){
         Swal.fire('¡Error!','Este tipo de mesa no permite esta capacidad de personas','error');
     } else if(mensaje=='hora_hoy'){
-        Swal.fire('¡Error!','La horas deden ser superiores a la hora actual','error');
+        Swal.fire('¡Error!','La hora inicial y final deden ser superiores a la hora actual','error');
     }
 
 </script>

@@ -75,7 +75,7 @@
         Swal.fire('¡Error!','Este usuario no es un cliente, por lo tanto no se puede reservar','error');
     }
     else if(mensaje=='hora_hoy'){
-        Swal.fire('¡Error!','La horas deden ser superiores a la hora actual','error');
+        Swal.fire('¡Error!','La hora inicial y final deden ser superiores a la hora actual','error');
     }
 
 </script>

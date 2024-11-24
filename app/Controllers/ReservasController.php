@@ -82,39 +82,45 @@ class ReservasController extends BaseController
         $id_reserva = $_POST['id_reserva'];
         $hora_inicio = $_POST['hora_inicio'];
         $hora_fin = $_POST['hora_fin'];
+        $fecha_actual = date("Y-m-d");
+        $hora_actual = date("H:i:s");
+        $fecha_reserva = $_POST['dia_reserva'];
 
         $tipos_mesa = $Apparta->listarRegistros('tipo_mesa');
-        
-        if($hora_inicio>=$hora_fin){
-            return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','hora');
+        if(($fecha_reserva==$fecha_actual) and ($hora_inicio<$hora_actual or $hora_fin<$hora_actual)){
+            return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','hora_hoy');
         }else{
-            $num_personas_valido = true;
-            foreach($tipos_mesa as $tipo_mesa){
-                if($tipo_mesa->id_tipo_mesa == $_POST['id_mesa']){
-                    if($tipo_mesa->capacidad_mesa < $_POST['num_personas']){
-                        $num_personas_valido = false;
+            if($hora_inicio>=$hora_fin){
+                return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','hora');
+            }else{
+                $num_personas_valido = true;
+                foreach($tipos_mesa as $tipo_mesa){
+                    if($tipo_mesa->id_tipo_mesa == $_POST['id_mesa']){
+                        if($tipo_mesa->capacidad_mesa < $_POST['num_personas']){
+                            $num_personas_valido = false;
+                        }
                     }
                 }
-            }
-
-            if(!$num_personas_valido){
-                return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','capacidad');
-            }else{
-                $datos_actualizar = [
-                    "id_usuario" => $_POST['id_usuario'],
-                    "id_mesa" => $_POST['id_mesa'],
-                    "fecha_inicio" => $_POST['dia_reserva']." ".$_POST['hora_inicio'],
-                    "fecha_fin" => $_POST['dia_reserva']." ".$_POST['hora_fin'],
-                    "num_personas" => $_POST['num_personas'],
-                    "estado_reserva" => $_POST['estado_reserva']                    
-                ];
-        
-                $respuesta = $Apparta->actualizarRegistro($datos_actualizar, $id_reserva, 'reserva', 'id_reserva');
-
-                if($respuesta){
-                    return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','registro actualizado');
+    
+                if(!$num_personas_valido){
+                    return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','capacidad');
                 }else{
-                    return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','error');
+                    $datos_actualizar = [
+                        "id_usuario" => $_POST['id_usuario'],
+                        "id_mesa" => $_POST['id_mesa'],
+                        "fecha_inicio" => $_POST['dia_reserva']." ".$_POST['hora_inicio'],
+                        "fecha_fin" => $_POST['dia_reserva']." ".$_POST['hora_fin'],
+                        "num_personas" => $_POST['num_personas'],
+                        "estado_reserva" => $_POST['estado_reserva']                    
+                    ];
+            
+                    $respuesta = $Apparta->actualizarRegistro($datos_actualizar, $id_reserva, 'reserva', 'id_reserva');
+    
+                    if($respuesta){
+                        return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','registro actualizado');
+                    }else{
+                        return redirect()->to(base_url().'gesreservas/reserva/'.$id_reserva)->with('mensaje','error');
+                    }
                 }
             }
         }

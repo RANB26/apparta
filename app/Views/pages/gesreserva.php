@@ -44,12 +44,12 @@
                         <div class="form-group col-sm-3 flex-column d-flex"> 
                             <label class="form-control-label px-3">Hora inicio<span class="text-danger"> *</span></label>
                             <?php $hora_inicio = $datetime->format('H:i:00'); ?>
-                            <input class="form-control" type="time" name="hora_inicio" min='<?php echo $hora_actual ?>' step="300" value="<?php echo $hora_inicio ?>" required>
+                            <input class="form-control" type="time" name="hora_inicio" step="300" value="<?php echo $hora_inicio ?>" required>
                         </div>
                         <div class="form-group col-sm-3 flex-column d-flex">
                             <label class="form-control-label px-3">Hora final<span class="text-danger"> *</span></label> 
                             <?php $datetime = new DateTime($reserva[0]->fecha_fin); $hora_fin = $datetime->format('H:i:00'); ?>
-                            <input class="form-control" type="time" name="hora_fin" min='<?php echo $hora_actual ?>' step="300" value="<?php echo $hora_fin ?>" required>
+                            <input class="form-control" type="time" name="hora_fin" step="300" value="<?php echo $hora_fin ?>" required>
                         </div>
                         <div class="form-group col-sm-3 flex-column d-flex"> 
                             <label class="form-control-label px-3">Estado<span class="text-danger"> *</span></label> 
@@ -85,6 +85,8 @@
     }
     else if(mensaje=='capacidad'){
         Swal.fire('¡Error!','Este tipo de mesa no permite esta capacidad de personas','error');
+    } else if(mensaje=='hora_hoy'){
+        Swal.fire('¡Error!','La horas deden ser superiores a la hora actual','error');
     }
 
 </script>

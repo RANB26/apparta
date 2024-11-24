@@ -107,44 +107,52 @@ class PageController extends BaseController{
             return redirect()->to(base_url().route_to('login'))->with('mensaje','inicia sesion');
         }else{
 
+            date_default_timezone_set('America/Bogota');
             $Apparta = new AppartaModel();
 
             $hora_inicio = $_POST['hora_inicio'];
             $hora_fin = $_POST['hora_fin'];
+            $fecha_actual = date("Y-m-d");
+            $hora_actual = date("H:i:s");
+            $fecha_reserva = $_POST['dia_reserva'];
 
             $tipos_mesa = $Apparta->listarRegistros('tipo_mesa');
-            
-            if($hora_inicio>=$hora_fin){
-                return redirect()->to(base_url().route_to('reservar'))->with('mensaje','hora');
-            }else{
 
-                $num_personas_valido = true;
-                foreach($tipos_mesa as $tipo_mesa){
-                    if($tipo_mesa->id_tipo_mesa == $_POST['id_mesa']){
-                        if($tipo_mesa->capacidad_mesa < $_POST['num_personas']){
-                            $num_personas_valido = false;
+            if(($fecha_reserva==$fecha_actual) and ($hora_inicio<$hora_actual or $hora_fin<$hora_actual)){
+                return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','hora_hoy');
+            }else{
+                if($hora_inicio>=$hora_fin){
+                    return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','hora');
+                }else{
+    
+                    $num_personas_valido = true;
+                    foreach($tipos_mesa as $tipo_mesa){
+                        if($tipo_mesa->id_tipo_mesa == $_POST['id_mesa']){
+                            if($tipo_mesa->capacidad_mesa < $_POST['num_personas']){
+                                $num_personas_valido = false;
+                            }
                         }
                     }
-                }
-
-                if(!$num_personas_valido){
-                    return redirect()->to(base_url().route_to('reservar'))->with('mensaje','capacidad');
-                }else{
-                    $datos_crear = [
-                        "id_usuario" => $_POST['id_usuario'],
-                        "id_mesa" => $_POST['id_mesa'],
-                        "fecha_inicio" => $_POST['dia_reserva']." ".$_POST['hora_inicio'],
-                        "fecha_fin" => $_POST['dia_reserva']." ".$_POST['hora_fin'],
-                        "num_personas" => $_POST['num_personas'],
-                        "id_usuario_registra" => $_POST['id_usuario_registra']                    
-                    ];
-            
-                    $respuesta = $Apparta->insertarRegistro($datos_crear, 'reserva');
-            
-                    if($respuesta>0){
-                        return redirect()->to(base_url().route_to('reservar'))->with('mensaje','reservada');
+    
+                    if(!$num_personas_valido){
+                        return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','capacidad');
                     }else{
-                        return redirect()->to(base_url().route_to('reservar'))->with('mensaje','error');
+                        $datos_crear = [
+                            "id_usuario" => $_POST['id_usuario'],
+                            "id_mesa" => $_POST['id_mesa'],
+                            "fecha_inicio" => $_POST['dia_reserva']." ".$_POST['hora_inicio'],
+                            "fecha_fin" => $_POST['dia_reserva']." ".$_POST['hora_fin'],
+                            "num_personas" => $_POST['num_personas'],
+                            "id_usuario_registra" => $_POST['id_usuario_registra']                    
+                        ];
+                
+                        $respuesta = $Apparta->insertarRegistro($datos_crear, 'reserva');
+                
+                        if($respuesta>0){
+                            return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','reservada');
+                        }else{
+                            return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','error');
+                        }
                     }
                 }
             }

@@ -42,11 +42,11 @@
                         </div>
                         <div class="form-group col-sm-4 flex-column d-flex"> 
                             <label class="form-control-label px-3">Hora de inicio<span class="text-danger"> *</span></label>
-                            <input class="form-control" type="time" name="hora_inicio" min='<?php echo $hora_actual ?>' step="300" required>
+                            <input class="form-control" type="time" name="hora_inicio" step="300" required>
                         </div>
                         <div class="form-group col-sm-4 flex-column d-flex">
                             <label class="form-control-label px-3">Hora final</label> 
-                            <input class="form-control" type="time" name="hora_fin" min='<?php echo $hora_actual ?>' step="300" required>
+                            <input class="form-control" type="time" name="hora_fin" step="300" required>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-4">
@@ -73,6 +73,9 @@
     }
     else if(mensaje=='cliente'){
         Swal.fire('¡Error!','Este usuario no es un cliente, por lo tanto no se puede reservar','error');
+    }
+    else if(mensaje=='hora_hoy'){
+        Swal.fire('¡Error!','La horas deden ser superiores a la hora actual','error');
     }
 
 </script>

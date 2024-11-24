@@ -3,12 +3,6 @@
     width: 100%;
 }
 
-.listamesas-scroll{
-	height: 80vh;
-	overflow-y: scroll;
-    padding: 10px 12px;
-}
-
 .portfolio a .card{
     transition: 0.40s;
 }

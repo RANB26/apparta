@@ -4,7 +4,7 @@
             <h2>Mesas</h2>
             <p>Mesas disponibles</p>
         </div>
-        <div class="row portfolio listaviviendas-scroll">
+        <div class="row portfolio listamesas-scroll">
             <?php foreach($mesas as $mesa){
                 if($mesa->estado_mesa=='Disponible'){ ?> 
                 <div class="col-xl-3 col-lg-6 col-md-12 col-sm-6 py-3">
@@ -31,7 +31,7 @@
             <h2>Mesas</h2>
             <p>Mesas ocupadas</p>
         </div>
-        <div class="row portfolio listaviviendas-scroll">
+        <div class="row portfolio mesas-scroll">
             <?php foreach($mesas as $mesa){
                 if($mesa->estado_mesa=='Ocupada'){ ?> 
                     <div class="col-xl-3 col-lg-6 col-md-12 col-sm-6 py-3">

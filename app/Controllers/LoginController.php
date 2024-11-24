@@ -35,7 +35,7 @@ class LoginController extends BaseController
         else{
             
             $Apparta = new AppartaModel();
-            $datosUsuario = $Apparta->obtenerRegistro(['correo_usuario' => $usuario], 'usuario');
+            $datosUsuario = $Apparta->obtenerRegistro(['correo_usuario' => $usuario], 'usuario', true);
 
             if(count($datosUsuario)==0){
                 return redirect()->to(base_url().route_to('login'))->with('mensaje','no_encontrado');

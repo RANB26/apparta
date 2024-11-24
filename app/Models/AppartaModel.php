@@ -11,11 +11,13 @@ class AppartaModel extends Model
         return $registros->getResult();
     }
 
-    public function obtenerRegistro($datos, $tabla)
+    public function obtenerRegistro($datos, $tabla, $login = null)
     {
         $registro = $this->db->table($tabla);
         $registro->where($datos);
-        if($registro->countAllResults() == 0) return array();
+        if($login){
+            if($registro->countAllResults() == 0) return array();
+        }
         return $registro->get()->getResultArray()[0];
     }
 

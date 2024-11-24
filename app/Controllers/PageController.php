@@ -95,7 +95,8 @@ class PageController extends BaseController{
                 $cliente_reservar = $Apparta->obtenerRegistro(['id_usuario' => $id_cliente], 'usuario');
                 if($cliente_reservar == null){
                     return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','usuario');
-                }else if($cliente_reservar['id_tipo_usuario'] != 3){
+                }
+                if($cliente_reservar['id_tipo_usuario'] != 3){
                     return redirect()->to(base_url().route_to('reservar', 0))->with('mensaje','cliente');
                 }
             }
